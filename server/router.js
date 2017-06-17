@@ -1,16 +1,18 @@
 const router = require('express').Router()
+const account = require('./routes/account')
+const lists = require('./rotes/lists')
+const campaigns = require('./routes/campaigns')
 
-// ACCOUNT DETAILS
-router.get('/account')
+// Account Details
+router.get('/account', account.getAccountData)
 
-// LOCATION DATA
-// LIST METRICS
-router.get('/lists')
+// List Metrics, Location Data, Client Data
+router.get('/lists', lists.getListData)
 
-// TOTAL EMAILS SENT
-router.get('/campaigns')
+// Subscribe Email to List
+router.post('/lists', lists.subscribeToList)
 
-// ADD EMAIL TO LIST
-router.post('/subscribe')
+// Total Emails Sent
+router.get('/campaigns', campaigns.getCampaignReports)
 
 module.exports = router
