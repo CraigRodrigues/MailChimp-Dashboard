@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const account = require('./routes/account')
-const lists = require('./rotes/lists')
+const lists = require('./routes/lists')
 const campaigns = require('./routes/campaigns')
 
 // Account Details
