@@ -1,0 +1,28 @@
+{
+  "name": "mailchimp_dashboard",
+  "version": "1.0.0",
+  "description": "Simple GG Button MailChimp Dashboard using v3 API",
+  "main": "index.js",
+  "scripts": {
+    "test": "t"
+  },
+  "keywords": [
+    "mailchimp",
+    "gg",
+    "react",
+    "api",
+    "dashboard"
+  ],
+  "author": "Craig Rodrigues",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "lodash": "^4.17.4",
+    "nodemon": "^1.11.0",
+    "react": "^15.6.1",
+    "supertest": "^3.0.0"
+  }
+}
