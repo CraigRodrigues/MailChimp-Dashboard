@@ -41,11 +41,13 @@
   "standard": {
       "globals": [
         "describe",
+        "xdescribe",
         "context",
         "before",
         "beforeEach",
         "after",
         "afterEach",
+        "test",
         "it",
         "expect"
       ]
