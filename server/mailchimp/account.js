@@ -15,7 +15,7 @@ const config = {
 }
 
 const accountDetails = () => {
-  return axios.get('', config)
+  return axios.get('/', config)
     .then(response => response.data)
     .catch(err => {
       console.log(err)
