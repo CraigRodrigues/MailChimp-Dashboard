@@ -1,12 +1,6 @@
-const axios = require('axios')
-const url = require('../../config').MAILCHIMP_API_URL || process.env.MAILCHIMP_API_URL
-const secret = require('../../config').MAILCHIMP_API_KEY || process.env.MAILCHIMP_API_KEY
+const axios = require('../wrapper/axios').wrapper
 
 const config = {
-  auth: {
-    username: 'mailkimp',
-    password: secret
-  },
   params: {
     fields: [
       'first_name',
@@ -21,7 +15,7 @@ const config = {
 }
 
 const accountDetails = () => {
-  return axios.get(url, config)
+  return axios.get('', config)
     .then(response => response.data)
     .catch(err => {
       console.log(err)
