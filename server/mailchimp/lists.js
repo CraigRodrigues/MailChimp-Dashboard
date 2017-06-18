@@ -1,5 +1,4 @@
 const axios = require('../wrapper/axios').wrapper
-
 const list = 'b8e2c4cce3'
 
 // Returns config object with the correct fields needed
@@ -34,7 +33,7 @@ const locationData = () => {
 }
 
 const subscribe = () => {
-
+  // TODO
 }
 
 module.exports = { listStats, clientData, locationData, subscribe }

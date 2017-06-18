@@ -103,6 +103,6 @@ describe('Getting Location Data', () => {
 
 })
 
-describe('Subscribing Email to a List', () => {
+xdescribe('Subscribing Email to a List', () => {
 
 })
