@@ -2,9 +2,6 @@ const axios = require('axios')
 const url = require('../../config').MAILCHIMP_API_URL || process.env.MAILCHIMP_API_URL
 const secret = require('../../config').MAILCHIMP_API_KEY || process.env.MAILCHIMP_API_KEY
 
-console.log(url)
-console.log(secret)
-
 const config = {
   auth: {
     username: 'mailkimp',
@@ -24,7 +21,6 @@ const config = {
 }
 
 const accountDetails = () => {
-  console.log('ok')
   return axios.get(url, config)
     .then(response => response.data)
     .catch(err => {

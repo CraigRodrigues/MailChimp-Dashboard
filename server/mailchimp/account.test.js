@@ -1,6 +1,6 @@
 const mailchimp = require('./account')
 
-test('It should receive an object', () => {
+test('It should receive an array', () => {
   return mailchimp.accountDetails()
     .then(data => {
       expect(typeof data).toBe('object')
