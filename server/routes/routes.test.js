@@ -1,6 +1,5 @@
 const request = require('supertest')
 const app = require('../index')
-const getAccountData = require('./account')
 
 describe('Test the root path', () => {
   test('It should respond the GET method to /', () => {
@@ -11,7 +10,7 @@ describe('Test the root path', () => {
   })
 })
 
-describe('Route Tests', () => {
+describe('Routes and Response Status Codes', () => {
   test('It should return 200 to GET /api/account', () => {
     return request(app).get('/api/account')
       .then(response => {
@@ -38,11 +37,18 @@ describe('Route Tests', () => {
   })
 })
 
-describe('Account /api/account', () => {
-  test('It should return account data', () => {
+describe('Response Data', () => {
+  test('It should return the correct account first name', () => {
     return request(app).get('/api/account')
-      .then(data => {
-        expect(typeof data).toBe('object')
+      .then(response => {
+        expect(response.body.first_name).toBe('GG')
+      })
+  })
+  test('It should return campaign data', () => {
+    return request(app).get('/api/campaigns')
+      .then(response => {
+        console.log(response.body)
+        expect(response.body).toBe('GG')
       })
   })
 })
