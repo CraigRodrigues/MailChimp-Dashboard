@@ -38,7 +38,7 @@ describe('Routes and Response Status Codes', () => {
 })
 
 describe('Response Data', () => {
-  test('It should return the correct account first name', () => {
+  test('It should return the correct account', () => {
     return request(app).get('/api/account')
       .then(response => {
         expect(response.body.first_name).toBe('GG')
@@ -47,8 +47,28 @@ describe('Response Data', () => {
   test('It should return campaign data', () => {
     return request(app).get('/api/campaigns')
       .then(response => {
+        expect(response.body.hasOwnProperty('campaigns')).toBe(true)
+      })
+  })
+  test('It should return list stats', () => {
+    return request(app).get('/api/lists')
+      .then(response => {
         console.log(response.body)
-        expect(response.body).toBe('GG')
+        expect(response.body.hasOwnProperty('campaigns')).toBe(true)
+      })
+  })
+  test.skip('It should return client data', () => {
+    return request(app).get('/api/lists')
+      .then(response => {
+        console.log(response.body['campaigns'])
+        expect(response.body.hasOwnProperty('campaigns')).toBe(true)
+      })
+  })
+  test.skip('It should return location data', () => {
+    return request(app).get('/api/lists')
+      .then(response => {
+        console.log(response.body['campaigns'])
+        expect(response.body.hasOwnProperty('campaigns')).toBe(true)
       })
   })
 })
