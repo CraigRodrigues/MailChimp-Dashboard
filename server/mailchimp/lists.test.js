@@ -98,5 +98,5 @@ describe('Getting Location Data', () => {
 })
 
 describe.skip('Subscribing Email to a List', () => {
-
+  // TODO
 })

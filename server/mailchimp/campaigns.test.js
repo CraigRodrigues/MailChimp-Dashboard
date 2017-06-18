@@ -1,7 +1,6 @@
 const mailchimp = require('./campaigns')
 
 describe('Getting Data From All Campaigns', () => {
-
   test('It should receive an object', () => {
     return mailchimp.campaignReports()
       .then(data => {
@@ -29,5 +28,4 @@ describe('Getting Data From All Campaigns', () => {
         expect(data.campaigns).toHaveLength(34)
       })
   })
-
 })

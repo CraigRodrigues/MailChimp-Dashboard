@@ -1,7 +1,6 @@
 const mailchimp = require('./account')
 
 describe('Getting Account Details', () => {
-
   test('It should receive an object', () => {
     return mailchimp.accountDetails()
       .then(data => {
@@ -36,5 +35,4 @@ describe('Getting Account Details', () => {
         })
       })
   })
-
 })
