@@ -23,7 +23,7 @@ describe('Basic List Stats', () => {
   test('Stats object should have 16 properties', () => {
     return mailchimp.listStats()
       .then(data => {
-        expect(Object.keys(data.stats).toHaveLength(16))
+        expect(Object.keys(data.stats)).toHaveLength(16)
       })
   })
 
