@@ -2,7 +2,7 @@ const errorHandler = require('./error')
 const Mailchimp = require('../mailchimp/lists')
 
 const getListData = (req, res) => {
-  // Batch promise.all
+  // Batch async promises
   Promise.all([Mailchimp.listStats(), Mailchimp.clientData(), Mailchimp.locationData()])
     .then(results => {
       res.send(results)
