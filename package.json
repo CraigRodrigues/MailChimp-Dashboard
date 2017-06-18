@@ -35,5 +35,19 @@
   "devDependencies": {
     "jest": "^20.0.4"
   },
-  "jest": { "testEnvironment": "node" }
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "standard": {
+      "globals": [
+        "describe",
+        "context",
+        "before",
+        "beforeEach",
+        "after",
+        "afterEach",
+        "it",
+        "expect"
+      ]
+  }
 }
