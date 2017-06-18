@@ -72,6 +72,35 @@ describe('List User Agent/Client Data', () => {
 
 describe('Getting Location Data', () => {
 
+  test('It should return an object', () => {
+    return mailchimp.locationData()
+      .then(data => {
+        expect(typeof data).toBe('object')
+      })
+  })
+  test('It should have only one property', () => {
+    return mailchimp.locationData()
+      .then(data => {
+        expect(Object.keys(data)).toHaveLength(1)
+      })
+  })
+  test('It should have a property called "locations"', () => {
+    return mailchimp.locationData()
+      .then(data => {
+        expect(data.hasOwnProperty('locations')).toBe(true)
+      })
+  })
+  test('Locations array should have at least one location with four attributes', () => {
+    let attributes = ['country', 'cc', 'percent', 'total']
+
+    return mailchimp.locationData()
+      .then(data => {
+        attributes.forEach(attribute => {
+          expect(data.locations[0].hasOwnProperty(attribute)).toBe(true)
+        })
+      })
+  })
+
 })
 
 describe('Subscribing Email to a List', () => {
