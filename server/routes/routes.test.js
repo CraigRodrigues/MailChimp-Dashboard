@@ -53,22 +53,19 @@ describe('Response Data', () => {
   test('It should return list stats', () => {
     return request(app).get('/api/lists')
       .then(response => {
-        console.log(response.body)
-        expect(response.body.hasOwnProperty('campaigns')).toBe(true)
+        expect(response.body[0].hasOwnProperty('stats')).toBe(true)
       })
   })
-  test.skip('It should return client data', () => {
+  test('It should return client data', () => {
     return request(app).get('/api/lists')
       .then(response => {
-        console.log(response.body['campaigns'])
-        expect(response.body.hasOwnProperty('campaigns')).toBe(true)
+        expect(response.body[1].hasOwnProperty('clients')).toBe(true)
       })
   })
-  test.skip('It should return location data', () => {
+  test('It should return location data', () => {
     return request(app).get('/api/lists')
       .then(response => {
-        console.log(response.body['campaigns'])
-        expect(response.body.hasOwnProperty('campaigns')).toBe(true)
+        expect(response.body[2].hasOwnProperty('locations')).toBe(true)
       })
   })
 })
