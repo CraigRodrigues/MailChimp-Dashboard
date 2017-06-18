@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config({ path: '../.env' })
 
 const PORT = process.env.PORT
 const HOST = process.env.HOST
@@ -8,8 +8,6 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const router = require('./router')
 const app = express()
-
-console.log(PORT)
 
 app.listen(PORT, () => {
   console.log(`Listening at ${HOST} on port ${PORT} in ${ENV} environment`)
