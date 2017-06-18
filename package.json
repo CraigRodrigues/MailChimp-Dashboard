@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Simple GG Button MailChimp Dashboard using v3 API",
   "main": "index.js",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/CraigRodrigues/MailChimp-Dashboard"
+  },
   "scripts": {
     "test": "jest"
   },
