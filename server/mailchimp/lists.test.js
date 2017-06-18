@@ -60,7 +60,7 @@ describe('List User Agent/Client Data', () => {
 
     return mailchimp.clientData()
       .then(data => {
-        let actual = data.map(x => x.client)
+        let actual = data.clients.map(x => x.client)
 
         expected.forEach(client => {
           expect(actual).toContain(client)
