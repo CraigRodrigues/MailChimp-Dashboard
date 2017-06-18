@@ -4,7 +4,7 @@ const config = {
 
 }
 
-const listData = () => {
+const listStats = () => {
 
 }
 
@@ -12,4 +12,4 @@ const subscribe = () => {
 
 }
 
-module.exports = { listData, subscribe }
+module.exports = { listStats, subscribe }
