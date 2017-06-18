@@ -1,7 +1,9 @@
 const Mailchimp = require('../mailchimp/account')
 
 const getAccountData = (req, res) => {
-  res.send()
+  Mailchimp.accountDetails()
+    .then(data => res.send(data))
+    // TODO: Handle Errors
 }
 
 module.exports = { getAccountData }

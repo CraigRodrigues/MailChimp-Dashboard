@@ -1,5 +1,5 @@
 const getCampaignReports = (req, res) => {
-  res.send()
+  res.sendStatus(200)
 }
 
 module.exports = { getCampaignReports }

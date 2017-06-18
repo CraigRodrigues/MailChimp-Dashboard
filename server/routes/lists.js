@@ -1,9 +1,9 @@
 const getListData = (req, res) => {
-  res.send()
+  res.sendStatus(200)
 }
 
 const subscribeToList = (req, res) => {
-  res.send()
+  res.sendStatus(201)
 }
 
 module.exports = {
