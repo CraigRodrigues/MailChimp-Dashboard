@@ -4,3 +4,9 @@
 # ENV/Config
 .env
 config.js
+
+# Logs
+*.log
+
+# Bundle
+bundle.js
