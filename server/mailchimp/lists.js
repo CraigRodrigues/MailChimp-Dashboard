@@ -27,8 +27,14 @@ const clientData = () => {
     .catch(err => console.log(err))
 }
 
+const locationData = () => {
+  return axios.get(`/lists/${list}/locations`, setConfig('locations'))
+    .then(response => response.data)
+    .catch(err => console.log(err))
+}
+
 const subscribe = () => {
 
 }
 
-module.exports = { listStats, clientData, subscribe }
+module.exports = { listStats, clientData, locationData, subscribe }
