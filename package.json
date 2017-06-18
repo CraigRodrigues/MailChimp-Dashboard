@@ -41,7 +41,6 @@
   "standard": {
       "globals": [
         "describe",
-        "xdescribe",
         "context",
         "before",
         "beforeEach",

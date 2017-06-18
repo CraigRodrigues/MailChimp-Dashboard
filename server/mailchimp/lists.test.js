@@ -1,7 +1,6 @@
 const mailchimp = require('./lists')
 
 describe('Basic List Stats', () => {
-
   test('It should return an object', () => {
     return mailchimp.listStats()
       .then(data => {
@@ -26,11 +25,9 @@ describe('Basic List Stats', () => {
         expect(Object.keys(data.stats)).toHaveLength(16)
       })
   })
-
 })
 
 describe('List User Agent/Client Data', () => {
-
   test('It should return an object', () => {
     return mailchimp.clientData()
       .then(data => {
@@ -67,11 +64,9 @@ describe('List User Agent/Client Data', () => {
         })
       })
   })
-
 })
 
 describe('Getting Location Data', () => {
-
   test('It should return an object', () => {
     return mailchimp.locationData()
       .then(data => {
@@ -100,9 +95,8 @@ describe('Getting Location Data', () => {
         })
       })
   })
-
 })
 
-xdescribe('Subscribing Email to a List', () => {
+describe.skip('Subscribing Email to a List', () => {
 
 })
