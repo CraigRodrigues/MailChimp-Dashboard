@@ -21,7 +21,6 @@ export default () => (
           colorIndex='grey-1-a'
         />}
       responsive
-      reverse={false}
       colorIndex='grey-1-a'
       size='large' />
   </Box>
