@@ -9,6 +9,8 @@ import TotalEmails from './TotalEmails'
 import OpenClickRates from './OpenClickRates'
 import TopLocations from './TopLocations'
 import CountryCount from './CountryCount'
+import LastSubscriber from './LastSubscriber'
+import Clients from './Clients'
 import Footer from './Footer'
 
 export default () => (
@@ -22,6 +24,8 @@ export default () => (
         <OpenClickRates />
         <TopLocations />
         <CountryCount />
+        <LastSubscriber />
+        <Clients />
       </Article>
       <Footer />
     </GrommetApp>
