@@ -16,6 +16,7 @@ export default class Nav extends Component {
     return (
       <Header fixed={true}
         size='medium'
+        pad={{horizontal: 'small'}}
         full='horizontal'>
         <Title>
           MailChimp Dashboard

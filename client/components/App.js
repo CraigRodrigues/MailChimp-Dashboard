@@ -7,17 +7,19 @@ import MemberSince from './MemberSince'
 import SubscriberCount from './SubscriberCount'
 import TotalEmails from './TotalEmails'
 import OpenClickRates from './OpenClickRates'
+import TopLocations from './TopLocations'
 import Footer from './Footer'
 
 export default () => (
   <div>
     <GrommetApp centered scrollStep={false}>
       <Nav />
-      <Article full='vertical'>
+      <Article full='vertical' margin='small'>
         <MemberSince />
         <SubscriberCount />
         <TotalEmails />
         <OpenClickRates />
+        <TopLocations />
       </Article>
       <Footer />
     </GrommetApp>
