@@ -6,6 +6,7 @@ import Nav from './Nav'
 import MemberSince from './MemberSince'
 import SubscriberCount from './SubscriberCount'
 import TotalEmails from './TotalEmails'
+import OpenClickRates from './OpenClickRates'
 import Footer from './Footer'
 
 export default () => (
@@ -16,6 +17,7 @@ export default () => (
         <MemberSince />
         <SubscriberCount />
         <TotalEmails />
+        <OpenClickRates />
       </Article>
       <Footer />
     </GrommetApp>
