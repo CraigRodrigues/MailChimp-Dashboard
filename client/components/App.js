@@ -8,10 +8,12 @@ import Footer from './Footer'
 export default () => (
   <div>
     <GrommetApp centered scrollStep={false}>
-      <Article >
-        <Nav />
-        <Footer />
+      <Nav />
+      <Article
+        colorIndex='light-2'
+        full='vertical'>
       </Article>
+      <Footer />
     </GrommetApp>
   </div>
 )
