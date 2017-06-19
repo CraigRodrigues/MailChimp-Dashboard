@@ -15,7 +15,8 @@ export default class Nav extends Component {
   render () {
     return (
       <Header fixed={true}
-        size='medium'>
+        size='medium'
+        full='horizontal'>
         <Title>
           MailChimp Dashboard
         </Title>
