@@ -12,7 +12,7 @@ export default () => (
     pad='small'
     separator='bottom'>
     <Headline size='small' strong>
-      MailChimp User Since: January, 11, 2011
+      MailChimp User Since January 11, 2011
     </Headline>
     <MembershipCounter />
   </Box>
