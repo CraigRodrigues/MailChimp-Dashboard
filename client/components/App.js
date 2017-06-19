@@ -4,6 +4,7 @@ import Article from 'grommet/components/Article'
 import Nav from './Nav'
 // import Homepage from './Homepage'
 import MemberSince from './MemberSince'
+import SubscriberCount from './SubscriberCount'
 import Footer from './Footer'
 
 export default () => (
@@ -12,6 +13,7 @@ export default () => (
       <Nav />
       <Article full='vertical'>
         <MemberSince />
+        <SubscriberCount />
       </Article>
       <Footer />
     </GrommetApp>
