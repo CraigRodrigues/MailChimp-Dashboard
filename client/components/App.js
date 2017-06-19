@@ -6,7 +6,7 @@ import Footer from './Footer'
 
 export default () => (
   <div>
-    <GrommetApp centered scrollStep={false}>
+    <GrommetApp>
       <Nav />
       <Homepage />
       <Footer />
