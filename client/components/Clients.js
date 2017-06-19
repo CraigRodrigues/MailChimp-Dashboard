@@ -10,8 +10,7 @@ export default () => (
     textAlign='center'
     full='horizontal'
     pad='small'>
-    <Heading align='center'
-      tag='h2'>
+    <Heading align='center' tag='h2'>
       Clients
     </Heading>
     <ClientsDoughnutChart />

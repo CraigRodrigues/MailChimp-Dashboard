@@ -11,6 +11,7 @@ import TopLocations from './TopLocations'
 import CountryCount from './CountryCount'
 import LastSubscriber from './LastSubscriber'
 import Clients from './Clients'
+import Map from './Map'
 import Footer from './Footer'
 
 export default () => (
@@ -26,6 +27,7 @@ export default () => (
         <CountryCount />
         <LastSubscriber />
         <Clients />
+        <Map />
       </Article>
       <Footer />
     </GrommetApp>
