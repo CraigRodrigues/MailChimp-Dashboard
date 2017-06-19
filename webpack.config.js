@@ -15,6 +15,24 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader',
+            options:
+            {
+              includePaths: ['./node_modules', './node_modules/grommet/node_modules']
+            }
+          }
+        ]
       }
     ]
   }
