@@ -5,6 +5,7 @@ import Nav from './Nav'
 // import Homepage from './Homepage'
 import MemberSince from './MemberSince'
 import SubscriberCount from './SubscriberCount'
+import TotalEmails from './TotalEmails'
 import Footer from './Footer'
 
 export default () => (
@@ -14,6 +15,7 @@ export default () => (
       <Article full='vertical'>
         <MemberSince />
         <SubscriberCount />
+        <TotalEmails />
       </Article>
       <Footer />
     </GrommetApp>
