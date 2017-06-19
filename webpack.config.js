@@ -19,17 +19,13 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader'
-          },
-          {
-            loader: 'sass-loader',
-            options:
-            {
-              includePaths: ['./node_modules', './node_modules/grommet/node_modules']
+          { loader: 'file-loader', options: { name: '[name].css' } },
+          { loader: 'sass-loader',
+            options: {
+              outputStyle: 'compressed',
+              includePaths: [
+                './node_modules'
+              ]
             }
           }
         ]
