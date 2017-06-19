@@ -1,16 +1,11 @@
 import React from 'react'
-import Meter from 'grommet/components/Meter'
-import Box from 'grommet/components/Box'
-import Value from 'grommet/components/Value'
+import GrommetApp from 'grommet/components/App'
+import Nav from './Nav'
 
 export default () => (
   <div>
-    <p>Hello, World!</p>
-    <Box>
-      <Value value={40}
-        units='GB'
-        align='start' />
-      <Meter value={40} />
-    </Box>
+    <GrommetApp centered={false}>
+      <Nav />
+    </GrommetApp>
   </div>
 )
