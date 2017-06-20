@@ -1,5 +1,7 @@
 import moment from 'moment'
 
-export default (time) => {
+const convertDate = (time) => {
   return moment(time).format('MMMM DD, YYYY')
 }
+
+module.exports = { convertDate }
