@@ -8,6 +8,8 @@
     "url": "https://github.com/CraigRodrigues/MailChimp-Dashboard"
   },
   "scripts": {
+    "start": "webpack -w",
+    "dev-server": "nodemon ./server/server.js",
     "test": "jest",
     "build": "webpack"
   },
