@@ -5,7 +5,7 @@ import Headline from 'grommet/components/Headline'
 import MembershipCounter from './MembershipCounter'
 
 export default (props) => {
-  let memberSince = utils(props.memberSince)
+  let memberSince = utils.convertDate(props.memberSince)
 
   return (
     <Box direction='column'
@@ -18,7 +18,7 @@ export default (props) => {
       <Headline size='small' strong>
         MailChimp User Since {memberSince}
       </Headline>
-      <MembershipCounter />
+      <MembershipCounter time={props.memberSince} />
     </Box>
   )
 }
