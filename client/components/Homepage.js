@@ -15,7 +15,7 @@ export default (props) => (
     <MemberSince memberSince={props.account.member_since} />
     <SubscriberCount numberOfSubscribers={props.account.total_subscribers} />
     <TotalEmails campaigns={props.campaigns} />
-    <OpenClickRates industryRate={props.account.industry_stats} myRate={props.listStats} />
+    <OpenClickRates industryRate={props.account.industry_stats} myStats={props.listStats} />
     <TopLocations />
     <CountryCount />
     <LastSubscriber />
