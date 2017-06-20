@@ -1,12 +1,29 @@
-import React from 'react'
+import React, { Component } from 'react'
+import countdown from 'countdown'
 import Heading from 'grommet/components/Heading'
 
-export default () => (
-  <Heading strong
-    uppercase
-    truncate={false}
-    align='center'
-    tag='h5'>
-    6 Years : 4 Months : 3 Weeks : 2 Days : 10 Hours : 2 Minutes : 30 Seconds
-  </Heading>
-)
+export default class MembershipCounter extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {}
+  }
+
+  componentWillMount () {
+    countdown(new Date(this.props.time), (timer) => {
+      let countdown = timer.toString().replace(/, |( and )/g, ' : ')
+      this.setState({ countdown: countdown })
+    }, countdown.DEFAULTS)
+  }
+
+  render () {
+    return (
+      <Heading strong
+        uppercase
+        truncate={false}
+        align='center'
+        tag='h5'>
+        {this.state.countdown}
+      </Heading>
+    )
+  }
+}
