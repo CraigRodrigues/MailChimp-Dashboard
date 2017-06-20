@@ -6,7 +6,7 @@ import Chart, { Base } from 'grommet/components/chart/Chart'
 import Label from 'grommet/components/Label'
 import Meter from 'grommet/components/Meter'
 
-export default () => (
+export default (props) => (
   <Box direction='column'
     align='center'
     alignContent='center'
@@ -19,10 +19,10 @@ export default () => (
     </Heading>
     <Chart full={false}
       horizontalAlignWith='meter-1-id'>
-      <Base vertical={true}>
+      <Base vertical>
         <Box direction='row'
           align='center'
-          pad={{"horizontal": "small", "between": "small"}}>
+          pad={{'horizontal': 'small', 'between': 'small'}}>
           <Label margin='small'>
             Opens (Industry)
           </Label>
@@ -38,7 +38,7 @@ export default () => (
         </Box>
         <Box direction='row'
           align='center'
-          pad={{"horizontal": "small", "between": "small"}}>
+          pad={{'horizontal': 'small', 'between': 'small'}}>
           <Label margin='small'>
             Opens (GG Button)
           </Label>
@@ -53,7 +53,7 @@ export default () => (
         </Box>
         <Box direction='row'
           align='center'
-          pad={{"horizontal": "small", "between": "small"}}>
+          pad={{'horizontal': 'small', 'between': 'small'}}>
           <Label margin='small'>
             Clicks (Industry)
           </Label>
@@ -68,7 +68,7 @@ export default () => (
         </Box>
         <Box direction='row'
           align='center'
-          pad={{"horizontal": "small", "between": "small"}}>
+          pad={{'horizontal': 'small', 'between': 'small'}}>
           <Label margin='small'>
             Clicks (GG Button)
           </Label>
