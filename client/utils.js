@@ -4,4 +4,8 @@ const convertDate = (time) => {
   return moment(time).format('MMMM DD, YYYY')
 }
 
-module.exports = { convertDate }
+const calculateTotalEmails = (list) => {
+
+}
+
+module.exports = { convertDate, calculateTotalEmails }

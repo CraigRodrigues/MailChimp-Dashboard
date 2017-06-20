@@ -14,7 +14,7 @@ export default (props) => (
   <Article full='vertical' margin='small'>
     <MemberSince memberSince={props.account.member_since} />
     <SubscriberCount numberOfSubscribers={props.account.total_subscribers} />
-    <TotalEmails />
+    <TotalEmails campaigns={props.campaigns} />
     <OpenClickRates />
     <TopLocations />
     <CountryCount />

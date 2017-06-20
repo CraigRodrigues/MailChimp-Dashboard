@@ -34,7 +34,7 @@ export default class App extends Component {
 
       this.setState({
         account: account.data,
-        campaign: campaign.data.campaigns,
+        campaigns: campaign.data.campaigns,
         clients: list.data[1].clients,
         listStats: list.data[0].stats,
         locations: list.data[2].locations
@@ -51,7 +51,7 @@ export default class App extends Component {
           <GrommetApp>
             <Nav />
             <Homepage account={this.state.account}
-              campaign={this.state.campaign}
+              campaigns={this.state.campaigns}
               clients={this.state.clients}
               listStats={this.state.listStats}
               locations={this.state.locations}
