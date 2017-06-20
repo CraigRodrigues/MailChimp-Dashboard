@@ -17,7 +17,7 @@ export default (props) => (
     <TotalEmails campaigns={props.campaigns} />
     <OpenClickRates industryRate={props.account.industry_stats} myStats={props.listStats} />
     <TopLocations />
-    <CountryCount />
+    <CountryCount countries={props.locations} />
     <LastSubscriber />
     <Clients />
     <Map />

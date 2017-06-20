@@ -4,7 +4,7 @@ import Heading from 'grommet/components/Heading'
 import Value from 'grommet/components/Value'
 import GlobeIcon from 'grommet/components/icons/base/Globe'
 
-export default () => (
+export default (props) => (
   <Box direction='column'
     align='center'
     alignContent='center'
@@ -15,7 +15,7 @@ export default () => (
       tag='h2'>
       Countries
     </Heading>
-    <Value value={'42'}
+    <Value value={props.countries.length}
       icon={
         <GlobeIcon size='large'
           colorIndex='grey-1-a'
