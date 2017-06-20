@@ -13,7 +13,7 @@ import Map from './Map'
 export default (props) => (
   <Article full='vertical' margin='small'>
     <MemberSince memberSince={props.account.member_since} />
-    <SubscriberCount />
+    <SubscriberCount numberOfSubscribers={props.account.total_subscribers} />
     <TotalEmails />
     <OpenClickRates />
     <TopLocations />
