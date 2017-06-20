@@ -24,13 +24,7 @@ const getAllData = () => {
 export default class App extends Component {
   constructor () {
     super()
-    this.state = {
-      account: null,
-      campaign: null,
-      clients: null,
-      listStats: null,
-      locations: null
-    }
+    this.state = null
   }
 
   componentWillMount () {
@@ -51,19 +45,23 @@ export default class App extends Component {
   }
 
   render () {
-    return (
-      <div>
-        <GrommetApp>
-          <Nav />
-          <Homepage account={this.state.account}
-            campaign={this.state.campaign}
-            clients={this.state.clients}
-            listStats={this.state.listStats}
-            locations={this.state.locations}
-          />
-          <Footer />
-        </GrommetApp>
-      </div>
-    )
+    if (this.state) {
+      return (
+        <div>
+          <GrommetApp>
+            <Nav />
+            <Homepage account={this.state.account}
+              campaign={this.state.campaign}
+              clients={this.state.clients}
+              listStats={this.state.listStats}
+              locations={this.state.locations}
+            />
+            <Footer />
+          </GrommetApp>
+        </div>
+      )
+    }
+
+    return <div>Loading</div>
   }
 }

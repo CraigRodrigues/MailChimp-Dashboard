@@ -10,9 +10,9 @@ import LastSubscriber from './LastSubscriber'
 import Clients from './Clients'
 import Map from './Map'
 
-export default () => (
+export default (props) => (
   <Article full='vertical' margin='small'>
-    <MemberSince />
+    <MemberSince memberSince={props.account.member_since} />
     <SubscriberCount />
     <TotalEmails />
     <OpenClickRates />
