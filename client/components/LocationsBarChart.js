@@ -1,37 +1,35 @@
 import React from 'react'
 import { Bar } from 'react-chartjs-2'
 
-const data = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-  datasets: [
-    {
-      label: 'Craig Data',
-      backgroundColor: 'rgba(255,99,132,0.2)',
-      borderColor: 'rgba(255,99,132,1)',
-      borderWidth: 1,
-      hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-      hoverBorderColor: 'rgba(255,99,132,1)',
-      data: [65, 59, 80, 81, 56, 55, 40]
-    }
-  ]
+const parseData = (countries) => {
+  return {
+    labels: countries.map(item => item.country),
+    datasets: [
+      {
+        label: 'Percent %',
+        backgroundColor: 'rgba(255,99,132,0.2)',
+        borderColor: 'rgba(255,99,132,1)',
+        borderWidth: 1.5,
+        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+        hoverBorderColor: 'rgba(255,99,132,1)',
+        data: countries.map(item => item.percent)
+      }
+    ]
+  }
 }
 
-export default React.createClass({
-  displayName: 'BarExample',
-
-  render () {
-    return (
-      <div>
-        <Bar
-          data={data}
-          width={500}
-          height={400}
-          options={{
-            maintainAspectRatio: true,
-            responsive: true
-          }}
-        />
-      </div>
-    )
-  }
-})
+export default (props) => {
+  return (
+    <div>
+      <Bar
+        data={parseData(props.countries)}
+        width={500}
+        height={350}
+        options={{
+          maintainAspectRatio: true,
+          responsive: true
+        }}
+      />
+    </div>
+  )
+}
