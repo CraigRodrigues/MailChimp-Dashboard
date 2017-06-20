@@ -6,6 +6,8 @@ import Value from 'grommet/components/Value'
 import MailIcon from 'grommet/components/icons/base/Mail'
 
 export default (props) => {
+  let totalEmails = calculateTotalEmails(props.campaigns)
+
   return (
     <Box direction='column'
       align='center'
@@ -17,7 +19,7 @@ export default (props) => {
         tag='h2'>
         Emails Sent
       </Heading>
-      <Value value={'120,279'}
+      <Value value={Number(totalEmails).toLocaleString()}
         icon={
           <MailIcon size='large'
             colorIndex='grey-1-a'

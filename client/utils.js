@@ -5,7 +5,7 @@ const convertDate = (time) => {
 }
 
 const calculateTotalEmails = (list) => {
-
+  return list.map(campaign => campaign.emails_sent).reduce((a, b) => a + b)
 }
 
 module.exports = { convertDate, calculateTotalEmails }
