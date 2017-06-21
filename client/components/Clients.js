@@ -7,9 +7,12 @@ export default ({clients}) => (
   <Box direction='column'
     align='center'
     alignContent='center'
+    alignSelf='center'
     textAlign='center'
-    full='horizontal'
-    pad='small'>
+    full={false}
+    basis='1/2'
+    pad='small'
+    separator='right'>
     <Heading align='center' tag='h2'>
       Clients
     </Heading>

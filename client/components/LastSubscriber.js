@@ -28,9 +28,10 @@ export default class LastSubscriber extends Component {
       <Box direction='column'
         align='center'
         alignContent='center'
+        alignSelf='center'
         textAlign='center'
-        full='horizontal'
-        pad='small'>
+        full={false}
+        pad='small' >
         <Heading align='center'
           tag='h2'>
           Last Subscriber

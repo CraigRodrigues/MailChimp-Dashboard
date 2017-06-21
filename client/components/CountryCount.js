@@ -10,10 +10,12 @@ const TOTAL_COUNTRIES = 196
 export default ({countries}) => (
   <Box direction='column'
     align='center'
+    alignSelf='stretch'
     alignContent='center'
     textAlign='center'
-    full='horizontal'
-    pad='small'>
+    full={false}
+    pad='small'
+    separator='bottom'>
     <Heading align='center'
       tag='h2'>
       Countries
