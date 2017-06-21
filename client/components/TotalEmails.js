@@ -5,8 +5,8 @@ import Heading from 'grommet/components/Heading'
 import Value from 'grommet/components/Value'
 import MailIcon from 'grommet/components/icons/base/Mail'
 
-export default (props) => {
-  let totalEmails = calculateTotalEmails(props.campaigns)
+export default ({ campaigns }) => {
+  let totalEmails = calculateTotalEmails(campaigns)
 
   return (
     <Box direction='column'

@@ -4,8 +4,8 @@ import Box from 'grommet/components/Box'
 import Headline from 'grommet/components/Headline'
 import MembershipCounter from './MembershipCounter'
 
-export default (props) => {
-  let memberSince = convertDate(props.memberSince)
+export default ({ memberSince }) => {
+  let timeAsMember = convertDate(memberSince)
 
   return (
     <Box direction='column'
@@ -16,9 +16,9 @@ export default (props) => {
       pad='small'
       separator='bottom'>
       <Headline size='small' strong>
-        MailChimp User Since {memberSince}
+        MailChimp User Since {timeAsMember}
       </Headline>
-      <MembershipCounter time={props.memberSince} />
+      <MembershipCounter time={memberSince} />
     </Box>
   )
 }

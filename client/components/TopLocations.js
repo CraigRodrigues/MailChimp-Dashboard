@@ -3,7 +3,7 @@ import Box from 'grommet/components/Box'
 import Heading from 'grommet/components/Heading'
 import LocationsBarChart from './LocationsBarChart'
 
-export default (props) => (
+export default ({ countries }) => (
   <Box direction='column'
     align='center'
     alignContent='center'
@@ -14,6 +14,6 @@ export default (props) => (
       tag='h2'>
       Top 10 Locations
     </Heading>
-    <LocationsBarChart countries={props.countries.slice(0, 10)} />
+    <LocationsBarChart countries={countries.slice(0, 10)} />
   </Box>
 )

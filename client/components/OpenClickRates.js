@@ -7,11 +7,11 @@ import Chart, { Base } from 'grommet/components/chart/Chart'
 import Label from 'grommet/components/Label'
 import Meter from 'grommet/components/Meter'
 
-export default (props) => {
-  const myOpenRate = convertToPercentage(props.myStats.open_rate)
-  const myClickRate = convertToPercentage(props.myStats.click_rate)
-  const industryOpenRate = convertToPercentage(props.industryRate.open_rate)
-  const industryClickRate = convertToPercentage(props.industryRate.click_rate)
+export default ({myStats, industryRate}) => {
+  const myOpenRate = convertToPercentage(myStats.open_rate)
+  const myClickRate = convertToPercentage(myStats.click_rate)
+  const industryOpenRate = convertToPercentage(industryRate.open_rate)
+  const industryClickRate = convertToPercentage(industryRate.click_rate)
 
   return (
     <Box direction='column'

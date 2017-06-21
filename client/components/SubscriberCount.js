@@ -4,7 +4,7 @@ import Heading from 'grommet/components/Heading'
 import Value from 'grommet/components/Value'
 import DocumentUserIcon from 'grommet/components/icons/base/DocumentUser'
 
-export default (props) => (
+export default ({ numberOfSubscribers }) => (
   <Box direction='column'
     align='center'
     alignContent='center'
@@ -15,7 +15,7 @@ export default (props) => (
       tag='h2'>
       Subscribers
     </Heading>
-    <Value value={Number(props.numberOfSubscribers).toLocaleString()}
+    <Value value={Number(numberOfSubscribers).toLocaleString()}
       icon={
         <DocumentUserIcon size='large'
           colorIndex='grey-1-a'

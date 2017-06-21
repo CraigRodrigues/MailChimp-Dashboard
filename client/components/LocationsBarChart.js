@@ -18,11 +18,11 @@ const parseData = (countries) => {
   }
 }
 
-export default (props) => {
+export default ({countries}) => {
   return (
     <div>
       <Bar
-        data={parseData(props.countries)}
+        data={parseData(countries)}
         width={500}
         height={350}
         options={{
