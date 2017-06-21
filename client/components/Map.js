@@ -7,23 +7,23 @@ import Box from 'grommet/components/Box'
 
 const colors = [
   {
-    threshold: 50,
+    threshold: 0,
     colorIndex: 'graph-1'
   },
   {
-    threshold: 249,
+    threshold: 51,
     colorIndex: 'graph-2'
   },
   {
-    threshold: 999,
+    threshold: 251,
     colorIndex: 'accent-1'
   },
   {
-    threshold: 1999,
+    threshold: 999,
     colorIndex: 'accent-2'
   },
   {
-    threshold: 2000,
+    threshold: 1999,
     colorIndex: 'brand'
   }
 ]
@@ -36,50 +36,52 @@ const findColor = (value) => {
   }
 }
 
-const mapSeries = [
-  {
-    continent: 'NorthAmerica',
-    label: 'North America',
-    value: 40,
-    colorIndex: 'brand',
-    onClick: () => {}
-  },
-  {
-    continent: 'SouthAmerica',
-    label: 'South America',
-    value: 30,
-    colorIndex: 'accent-1',
-    onClick: () => {}
-  },
-  {
-    continent: 'Europe',
-    label: 'Europe',
-    value: 20,
-    colorIndex: 'brand',
-    onClick: () => {}
-  },
-  {
-    continent: 'Africa',
-    label: 'Africa',
-    value: 10,
-    colorIndex: 'graph-1',
-    onClick: () => {}
-  },
-  {
-    continent: 'Asia',
-    label: 'Asia',
-    value: 15,
-    colorIndex: 'graph-2',
-    onClick: () => {}
-  },
-  {
-    continent: 'Australia',
-    label: 'Australia',
-    value: 10,
-    colorIndex: 'accent-1',
-    onClick: () => {}
-  }
-]
+const createMapSeries = (subscribers) => {
+  return [
+    {
+      continent: 'NorthAmerica',
+      label: 'North America',
+      value: subscribers.NorthAmerica,
+      colorIndex: findColor(subscribers.NorthAmerica),
+      onClick: () => {}
+    },
+    {
+      continent: 'SouthAmerica',
+      label: 'South America',
+      value: subscribers.SouthAmerica,
+      colorIndex: findColor(subscribers.SouthAmerica),
+      onClick: () => {}
+    },
+    {
+      continent: 'Europe',
+      label: 'Europe',
+      value: subscribers.Europe,
+      colorIndex: findColor(subscribers.Europe),
+      onClick: () => {}
+    },
+    {
+      continent: 'Africa',
+      label: 'Africa',
+      value: subscribers.Africa,
+      colorIndex: findColor(subscribers.Africa),
+      onClick: () => {}
+    },
+    {
+      continent: 'Asia',
+      label: 'Asia',
+      value: subscribers.Asia,
+      colorIndex: findColor(subscribers.Asia),
+      onClick: () => {}
+    },
+    {
+      continent: 'Australia',
+      label: 'Australia',
+      value: subscribers.Oceania,
+      colorIndex: findColor(subscribers.Oceania),
+      onClick: () => {}
+    }
+  ]
+}
 
 const convertAllCountries = (countries) => {
   return countries.map(item => {
@@ -132,9 +134,6 @@ export default ({ countries }) => {
   let allCountries = convertAllCountries(countries)
   let continents = filterCurrentCountriesByContinent(allCountries)
 
-  console.log(allCountries)
-  console.log(continents)
-
   const numberOfCountries = numberOfCountriesPerContinent(continents)
   const numberOfSubscribers = numberOfSubscribersPerContinent(continents)
 
@@ -147,9 +146,9 @@ export default ({ countries }) => {
         Subscriber World Map
       </Heading>
       <Box className='infographic-map'>
-        <WorldMap series={mapSeries} />
+        <WorldMap series={createMapSeries(numberOfSubscribers)} />
       </Box>
-      <Box align='center' pad={{vertical: 'medium'}}>
+      <Box align='center' pad={{vertical: 'small'}}>
         <Legend series={[
           {
             'label': '0-50',
