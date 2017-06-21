@@ -18,7 +18,7 @@ export default ({account, campaigns, listStats, locations, clients}) => (
     <OpenClickRates industryRate={account.industry_stats} myStats={listStats} />
     <TopLocations countries={locations} />
     <CountryCount countries={locations} />
-    <LastSubscriber />
+    <LastSubscriber listStats={listStats} />
     <Clients clients={clients} />
     <Map countries={locations} />
   </Article>
