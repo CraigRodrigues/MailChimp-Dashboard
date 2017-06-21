@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import GrommetApp from 'grommet/components/App'
+import Spinning from 'grommet/components/icons/Spinning'
 import Nav from './Nav'
 import Homepage from './Homepage'
 import Footer from './Footer'
@@ -62,6 +63,11 @@ export default class App extends Component {
       )
     }
 
-    return <div>Loading</div>
+    return (
+      <div>
+        <div>Loading</div>
+        <Spinning size='large' />
+      </div>
+    )
   }
 }
