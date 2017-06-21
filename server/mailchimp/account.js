@@ -1,4 +1,4 @@
-const axios = require('../wrapper/axios').wrapper
+const axios = require('../wrapper')
 
 const config = {
   params: {

@@ -1,4 +1,4 @@
-const axios = require('../wrapper/axios').wrapper
+const axios = require('../wrapper')
 const list = 'b8e2c4cce3'
 
 // Returns config object with the correct fields needed
