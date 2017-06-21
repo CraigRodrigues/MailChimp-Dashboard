@@ -1,6 +1,5 @@
 import React from 'react'
 import { countriesByContinent } from '../data'
-import _ from 'lodash'
 import Heading from 'grommet/components/Heading'
 import Legend from 'grommet/components/Legend'
 import WorldMap from 'grommet/components/WorldMap'
@@ -52,14 +51,27 @@ const mapSeries = [
 ]
 
 const convertAllCountries = (countries) => {
-  return countries.map(item => item.country)
+  return countries.map(item => {
+    return {
+      name: item.country,
+      subscribers: item.total
+    }
+  })
 }
 
 const filterCurrentCountriesByContinent = (countries) => {
   let results = {}
   for (let continent in countriesByContinent) {
-    results[continent] = countriesByContinent[continent]
-    results[continent] = _.intersection(results[continent], countries)
+    // If our country name matches in a list of continents then push object
+    let temp = []
+    countries.forEach(country => {
+      if (countriesByContinent[continent].includes(country.name)) {
+        temp.push(country)
+      }
+    })
+
+    // Move our temporary values into our results object
+    results[continent] = temp
   }
 
   return results
@@ -69,7 +81,8 @@ export default ({ countries }) => {
   let allCountries = convertAllCountries(countries)
   let continents = filterCurrentCountriesByContinent(allCountries)
 
-  console.log(allCountries, continents)
+  console.log(allCountries)
+  console.log(continents)
 
   return (
     <Box>
@@ -79,22 +92,22 @@ export default ({ countries }) => {
       <Box className='infographic-map'>
         <WorldMap series={mapSeries} />
       </Box>
-      <Box align='center' pad={{vertical: 'small'}}>
+      <Box align='center' pad={{vertical: 'medium'}}>
         <Legend series={[
           {
-            'label': '0',
+            'label': '0-5',
             'colorIndex': 'graph-1'
           },
           {
-            'label': '1-25',
+            'label': '6-10',
             'colorIndex': 'graph-2'
           },
           {
-            'label': '26-50',
+            'label': '11-25',
             'colorIndex': 'accent-1'
           },
           {
-            'label': '50+',
+            'label': '26+',
             'colorIndex': 'brand'
           }
         ]} />
