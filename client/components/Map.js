@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { countriesByContinent } from '../data'
+import MapModal from './MapModal'
 import Heading from 'grommet/components/Heading'
 import Layer from 'grommet/components/Layer'
 import Legend from 'grommet/components/Legend'
@@ -96,8 +97,12 @@ export default class Map extends Component {
     this._onClose = this._onClose.bind(this)
   }
 
-  _activate () {
-    this.setState({ active: true })
+  _activate (continent, prop) {
+    this.setState({
+      active: true,
+      continentSelected: continent,
+      continentProperty: prop
+    })
   }
 
   _onClose () {
@@ -111,7 +116,7 @@ export default class Map extends Component {
         label: 'North America',
         value: subscribers.NorthAmerica,
         colorIndex: findColor(subscribers.NorthAmerica),
-        onClick: () => { this._activate() }
+        onClick: () => { this._activate('North America', 'NorthAmerica') }
       },
       {
         continent: 'SouthAmerica',
@@ -159,14 +164,17 @@ export default class Map extends Component {
     const numberOfCountries = numberOfCountriesPerContinent(continents)
     const numberOfSubscribers = numberOfSubscribersPerContinent(continents)
 
+    console.log(numberOfCountries)
+
     let activeLayer = null
 
     if (this.state.active) {
       activeLayer = (
         <Layer onClose={this._onClose}
-          closer={true}
+          closer
           align='center'>
-          <Box>Test</Box>
+          <MapModal continent={this.state.continentSelected}
+            count={numberOfCountries[this.state.continentProperty]} />
         </Layer>
       )
     }
