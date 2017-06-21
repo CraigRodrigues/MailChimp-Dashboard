@@ -10,16 +10,16 @@ import LastSubscriber from './LastSubscriber'
 import Clients from './Clients'
 import Map from './Map'
 
-export default (props) => (
+export default ({account, campaigns, listStats, locations, clients}) => (
   <Article full='vertical' margin='small'>
-    <MemberSince memberSince={props.account.member_since} />
-    <SubscriberCount numberOfSubscribers={props.account.total_subscribers} />
-    <TotalEmails campaigns={props.campaigns} />
-    <OpenClickRates industryRate={props.account.industry_stats} myStats={props.listStats} />
-    <TopLocations countries={props.locations} />
-    <CountryCount countries={props.locations} />
+    <MemberSince memberSince={account.member_since} />
+    <SubscriberCount numberOfSubscribers={account.total_subscribers} />
+    <TotalEmails campaigns={campaigns} />
+    <OpenClickRates industryRate={account.industry_stats} myStats={listStats} />
+    <TopLocations countries={locations} />
+    <CountryCount countries={locations} />
     <LastSubscriber />
-    <Clients clients={props.clients} />
+    <Clients clients={clients} />
     <Map />
   </Article>
 )
