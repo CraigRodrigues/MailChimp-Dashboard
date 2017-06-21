@@ -19,7 +19,7 @@ export default (props) => (
     <TopLocations countries={props.locations} />
     <CountryCount countries={props.locations} />
     <LastSubscriber />
-    <Clients />
+    <Clients clients={props.clients} />
     <Map />
   </Article>
 )
