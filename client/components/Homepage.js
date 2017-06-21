@@ -20,6 +20,6 @@ export default ({account, campaigns, listStats, locations, clients}) => (
     <CountryCount countries={locations} />
     <LastSubscriber />
     <Clients clients={clients} />
-    <Map />
+    <Map countries={locations} />
   </Article>
 )
