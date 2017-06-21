@@ -34,7 +34,7 @@ const countriesByContinent = {
     'Luxembourg',
     'Latvia',
     'Monaco',
-    'Moldova',
+    'Moldova, Republic of',
     'Montenegro',
     'Macedonia',
     'Malta',
@@ -80,7 +80,7 @@ const countriesByContinent = {
     'South Korea',
     'Kuwait',
     'Kazakhstan',
-    'Laos',
+    'Lao People\'s Democratic Republic',
     'Lebanon',
     'Sri Lanka',
     'Myanmar [Burma]',
@@ -143,7 +143,7 @@ const countriesByContinent = {
     'Sint Maarten',
     'Turks and Caicos Islands',
     'Trinidad and Tobago',
-    'United States',
+    'USA',
     'Saint Vincent and the Grenadines',
     'British Virgin Islands',
     'U.S. Virgin Islands' ],
@@ -257,3 +257,5 @@ const countriesByContinent = {
     'Wallis and Futuna',
     'Samoa' ]
 }
+
+module.exports = { countriesByContinent }
