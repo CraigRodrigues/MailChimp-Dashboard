@@ -137,9 +137,6 @@ export default ({ countries }) => {
   const numberOfCountries = numberOfCountriesPerContinent(continents)
   const numberOfSubscribers = numberOfSubscribersPerContinent(continents)
 
-  console.log(numberOfCountries)
-  console.log(numberOfSubscribers)
-
   return (
     <Box>
       <Heading align='center' tag='h2'>
