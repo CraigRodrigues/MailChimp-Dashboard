@@ -97,7 +97,7 @@ export default class Map extends Component {
     this._onClose = this._onClose.bind(this)
   }
 
-  _activate (continent, prop) {
+  _activate (continent, prop = continent) {
     this.setState({
       active: true,
       continentSelected: continent,
@@ -123,35 +123,35 @@ export default class Map extends Component {
         label: 'South America',
         value: subscribers.SouthAmerica,
         colorIndex: findColor(subscribers.SouthAmerica),
-        onClick: () => { this._activate() }
+        onClick: () => { this._activate('South America', 'SouthAmerica') }
       },
       {
         continent: 'Europe',
         label: 'Europe',
         value: subscribers.Europe,
         colorIndex: findColor(subscribers.Europe),
-        onClick: () => {}
+        onClick: () => { this._activate('Europe') }
       },
       {
         continent: 'Africa',
         label: 'Africa',
         value: subscribers.Africa,
         colorIndex: findColor(subscribers.Africa),
-        onClick: () => {}
+        onClick: () => { this._activate('Africa') }
       },
       {
         continent: 'Asia',
         label: 'Asia',
         value: subscribers.Asia,
         colorIndex: findColor(subscribers.Asia),
-        onClick: () => {}
+        onClick: () => { this._activate('Asia') }
       },
       {
         continent: 'Australia',
         label: 'Australia',
         value: subscribers.Oceania,
         colorIndex: findColor(subscribers.Oceania),
-        onClick: () => {}
+        onClick: () => { this._activate('Australia', 'Oceania') }
       }
     ]
   }

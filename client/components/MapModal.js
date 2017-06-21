@@ -3,11 +3,12 @@ import Box from 'grommet/components/Box'
 import Heading from 'grommet/components/Heading'
 
 export default ({ continent, count }) => (
-  <Box direction='column'
+  <Box responsive
+    direction='column'
     align='center'
     alignContent='center'
     textAlign='center'
-    full='horizontal'
+    full={false}
     pad='medium'>
     <Heading uppercase
       strong={false}
