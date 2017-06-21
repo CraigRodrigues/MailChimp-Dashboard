@@ -15,7 +15,6 @@ export default class LastSubscriber extends Component {
 
   componentWillMount () {
     countdown(new Date(this.props.listStats.last_sub_date), (timer) => {
-      console.log(timer)
       this.setState({
         days: `${timer.days} days`,
         hours: `${timer.hours} hours`,

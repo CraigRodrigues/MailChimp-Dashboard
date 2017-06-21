@@ -164,8 +164,6 @@ export default class Map extends Component {
     const numberOfCountries = numberOfCountriesPerContinent(continents)
     const numberOfSubscribers = numberOfSubscribersPerContinent(continents)
 
-    console.log(numberOfCountries)
-
     let activeLayer = null
 
     if (this.state.active) {
