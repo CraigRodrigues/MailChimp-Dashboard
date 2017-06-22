@@ -48,18 +48,16 @@ export default class App extends Component {
   render () {
     if (this.state) {
       return (
-        <div>
-          <GrommetApp>
-            <Nav />
-            <Homepage account={this.state.account}
-              campaigns={this.state.campaigns}
-              clients={this.state.clients}
-              listStats={this.state.listStats}
-              locations={this.state.locations}
-            />
-            <Footer />
-          </GrommetApp>
-        </div>
+        <GrommetApp>
+          <Nav />
+          <Homepage account={this.state.account}
+            campaigns={this.state.campaigns}
+            clients={this.state.clients}
+            listStats={this.state.listStats}
+            locations={this.state.locations}
+          />
+          <Footer />
+        </GrommetApp>
       )
     }
 
