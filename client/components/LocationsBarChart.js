@@ -23,7 +23,7 @@ export default ({countries}) => {
     <div>
       <Bar
         data={parseData(countries)}
-        width={500}
+        width={350}
         height={350}
         options={{
           maintainAspectRatio: true,

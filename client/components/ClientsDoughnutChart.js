@@ -24,7 +24,7 @@ export default ({clients}) => {
   return (
     <div>
       <Doughnut data={parseData(clients)}
-        width={500}
+        width={350}
         height={400}
         options={{
           maintainAspectRatio: true,
