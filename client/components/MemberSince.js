@@ -10,8 +10,7 @@ export default ({ memberSince }) => {
 
   return (
     <Animate
-      enter={{"animation": "slide-up", "duration": 1000, "delay": 0}}
-      keep={true}>
+      enter={{'animation': 'slide-up', 'duration': 1000, 'delay': 0}} >
       <Box direction='column'
         align='center'
         alignContent='center'
