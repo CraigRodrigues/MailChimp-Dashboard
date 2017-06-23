@@ -13,8 +13,7 @@ export default ({ memberSince }) => {
       alignContent='center'
       textAlign='center'
       full='horizontal'
-      pad='small'
-      separator='bottom'>
+      pad='medium'>
       <Headline size='small' strong>
         MailChimp User Since {timeAsMember}
       </Headline>
