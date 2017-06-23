@@ -1,6 +1,5 @@
 import React from 'react'
 import { Bar } from 'react-chartjs-2'
-import Box from 'grommet/components/Box'
 
 const parseData = (countries) => {
   return {

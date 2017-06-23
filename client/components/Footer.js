@@ -7,7 +7,8 @@ import Paragraph from 'grommet/components/Paragraph'
 export default () => (
   <GrommetFooter justify='between'
     size='small'
-    pad='small'>
+    pad='small'
+    flex>
     <Title>
       MailChimp Dashboard
     </Title>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import GrommetApp from 'grommet/components/App'
+import Headline from 'grommet/components/Headline'
+import Box from 'grommet/components/Box'
 import Spinning from 'grommet/components/icons/Spinning'
 import Nav from './Nav'
 import Homepage from './Homepage'
@@ -62,10 +64,20 @@ export default class App extends Component {
     }
 
     return (
-      <div>
-        <div>Loading</div>
-        <Spinning size='large' />
-      </div>
+      <GrommetApp>
+        <Box align='center'
+          alignContent='center'
+          justify='center'
+          alignSelf='center'
+          textAlign='center'
+          full>
+          <Spinning size='large' />
+          <Headline
+            size='medium'>
+            Loading
+          </Headline>
+        </Box>
+      </GrommetApp>
     )
   }
 }
