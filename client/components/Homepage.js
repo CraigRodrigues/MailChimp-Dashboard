@@ -13,7 +13,7 @@ import Clients from './Clients'
 import Map from './Map'
 
 export default ({account, campaigns, listStats, locations, clients}) => (
-  <Article full>
+  <div>
     <MemberSince memberSince={account.member_since} />
     <SubscriberCount numberOfSubscribers={account.total_subscribers} />
     <TotalEmails campaigns={campaigns} />
@@ -34,5 +34,5 @@ export default ({account, campaigns, listStats, locations, clients}) => (
       </Box>
     </Columns>
     <Map countries={locations} />
-  </Article>
+  </div>
 )

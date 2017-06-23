@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import GrommetApp from 'grommet/components/App'
+import Article from 'grommet/components/Article'
 import Spinning from 'grommet/components/icons/Spinning'
 import Nav from './Nav'
 import Homepage from './Homepage'
@@ -48,7 +48,7 @@ export default class App extends Component {
   render () {
     if (this.state) {
       return (
-        <GrommetApp>
+        <Article full>
           <Nav account={this.state.account} />
           <Homepage account={this.state.account}
             campaigns={this.state.campaigns}
@@ -57,7 +57,7 @@ export default class App extends Component {
             locations={this.state.locations}
           />
           <Footer />
-        </GrommetApp>
+        </Article>
       )
     }
 

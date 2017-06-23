@@ -6,6 +6,7 @@ import Paragraph from 'grommet/components/Paragraph'
 
 export default () => (
   <GrommetFooter justify='between'
+    colorIndex='light-2'
     size='medium'
     pad='small'>
     <Title>

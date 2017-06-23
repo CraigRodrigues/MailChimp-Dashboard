@@ -22,15 +22,18 @@ export default class Nav extends Component {
       <Header
         fixed
         full='horizontal'
-        colorIndex='light-2'
         size='small'
-        pad='small'>
-        <Heading tag='h3'>
-          MailChimp Dashboard
-        </Heading>
+        colorIndex='light-2'
+        responsive >
+        <Box pad='small'>
+          <Heading tag='h3' align='center'>
+            MailChimp Dashboard
+          </Heading>
+        </Box>
         <Box flex
           justify='end'
           direction='row'
+          pad='small'
           responsive={false}>
           <Image src='https://grommet.github.io/img/carousel-1.png'
             size='thumb' />
