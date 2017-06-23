@@ -31,18 +31,17 @@ export default class Nav extends Component {
           justify='end'
           direction='row'
           responsive={false}>
-          <Menu
+          <Menu responsive
             label={`${first_name} ${last_name}`}
             icon={<DownIcon />}
             dropAlign={{'right': 'right'}}>
-            <Anchor href='#'
-              className='active'>
+            <Anchor>
               Enter API Key
             </Anchor>
-            <Anchor href='#'>
+            <Anchor>
               About
             </Anchor>
-            <Anchor href='#'>
+            <Anchor>
               Logout
             </Anchor>
           </Menu>
