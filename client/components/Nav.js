@@ -4,7 +4,6 @@ import Title from 'grommet/components/Title'
 import Image from 'grommet/components/Image'
 import Box from 'grommet/components/Box'
 import Menu from 'grommet/components/Menu'
-// import Image from 'grommet/components/Image'
 import Anchor from 'grommet/components/Anchor'
 import DownIcon from 'grommet/components/icons/base/Down'
 
