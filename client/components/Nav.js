@@ -37,10 +37,10 @@ export default class Nav extends Component {
             dropAlign={{'right': 'right'}}>
             <Anchor href='#'
               className='active'>
-              Enter MailChimp API Key
+              Enter API Key
             </Anchor>
             <Anchor href='#'>
-              About This
+              About
             </Anchor>
             <Anchor href='#'>
               Logout
