@@ -31,7 +31,7 @@ export default ({myStats, industryRate}) => {
             align='center'
             pad={{'horizontal': 'small', 'between': 'small'}}>
             <Label margin='small'>
-              Opens (Industry)
+              Opens (Ind)
             </Label>
             <Meter id='meter-1-id'
               label={false}
@@ -47,7 +47,7 @@ export default ({myStats, industryRate}) => {
             align='center'
             pad={{'horizontal': 'small', 'between': 'small'}}>
             <Label margin='small'>
-              Opens (GG Button)
+              Opens (You)
             </Label>
             <Meter label={false}
               max={30}
@@ -62,7 +62,7 @@ export default ({myStats, industryRate}) => {
             align='center'
             pad={{'horizontal': 'small', 'between': 'small'}}>
             <Label margin='small'>
-              Clicks (Industry)
+              Clicks (Ind)
             </Label>
             <Meter label={false}
               max={10}
@@ -77,7 +77,7 @@ export default ({myStats, industryRate}) => {
             align='center'
             pad={{'horizontal': 'small', 'between': 'small'}}>
             <Label margin='small'>
-              Clicks (GG Button)
+              Clicks (You)
             </Label>
             <Meter label={false}
               max={10}
