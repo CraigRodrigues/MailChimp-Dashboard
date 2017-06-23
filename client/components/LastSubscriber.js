@@ -11,16 +11,22 @@ export default class LastSubscriber extends Component {
       hours: null,
       minutes: null
     }
+    this.loadInterval = false
   }
 
   componentWillMount () {
-    countdown(new Date(this.props.listStats.last_sub_date), (timer) => {
+    this.loadInterval = countdown(new Date(this.props.listStats.last_sub_date), (timer) => {
       this.setState({
         days: `${timer.days} days`,
         hours: `${timer.hours} hours`,
         minutes: `${timer.minutes} minutes`
       })
     }, countdown.DAYS | countdown.HOURS | countdown.MINUTES)
+  }
+
+  componentWillUnmount () {
+    this.loadInterval && clearInterval(this.loadInterval)
+    this.loadInterval = false
   }
 
   render () {
