@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import Header from 'grommet/components/Header'
-import Heading from 'grommet/components/Heading'
+import Title from 'grommet/components/Title'
+import Image from 'grommet/components/Image'
 import Box from 'grommet/components/Box'
 import Menu from 'grommet/components/Menu'
-import Image from 'grommet/components/Image'
+// import Image from 'grommet/components/Image'
 import Anchor from 'grommet/components/Anchor'
 import DownIcon from 'grommet/components/icons/base/Down'
 
@@ -18,18 +19,19 @@ export default class Nav extends Component {
     let { first_name, last_name } = this.props.account
 
     return (
-      <Header
-        fixed
-        pad={{horizontal: 'small'}}
-        full='horizontal'>
-        <Box basis='1/2' direction='row' justify='start'>
-          <Image src='/assets/mc_logo.png'
-            size='thumb' />
-          <Heading tag='h3' strong>
-            MailChimp Dashboard
-          </Heading>
-        </Box>
-        <Box basis='1/2' direction='row' justify='end'>
+      <Header fixed
+        size='medium'
+        splash={false}
+        flex >
+        <Image src='/assets/mc_logo.png'
+          size='thumb' />
+        <Title>
+          Dashboard
+        </Title>
+        <Box flex
+          justify='end'
+          direction='row'
+          responsive={false}>
           <Menu
             label={`${first_name} ${last_name}`}
             icon={<DownIcon />}
@@ -39,7 +41,7 @@ export default class Nav extends Component {
               Enter MailChimp API Key
             </Anchor>
             <Anchor href='#'>
-              About
+              About This
             </Anchor>
             <Anchor href='#'>
               Logout

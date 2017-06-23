@@ -6,11 +6,10 @@ import Paragraph from 'grommet/components/Paragraph'
 
 export default () => (
   <GrommetFooter justify='between'
-    colorIndex='light-2'
-    size='medium'
+    size='small'
     pad='small'>
     <Title>
-      MailChimp
+      MailChimp Dashboard
     </Title>
     <Box direction='row'
       align='center'
