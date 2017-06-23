@@ -32,6 +32,7 @@ export default class Nav extends Component {
           direction='row'
           responsive={false}>
           <Menu responsive
+            pad='small'
             label={`${first_name} ${last_name}`}
             icon={<DownIcon />}
             dropAlign={{'right': 'right'}}>
