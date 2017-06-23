@@ -49,7 +49,7 @@ export default class App extends Component {
     if (this.state) {
       return (
         <GrommetApp>
-          <Nav />
+          <Nav account={this.state.account} />
           <Homepage account={this.state.account}
             campaigns={this.state.campaigns}
             clients={this.state.clients}
