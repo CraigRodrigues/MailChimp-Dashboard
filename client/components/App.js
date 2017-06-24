@@ -72,10 +72,6 @@ export default class App extends Component {
           textAlign='center'
           full>
           <Spinning size='large' />
-          <Headline
-            size='medium'>
-            Loading
-          </Headline>
         </Box>
       </GrommetApp>
     )
