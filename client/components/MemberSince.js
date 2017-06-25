@@ -2,7 +2,7 @@ import React from 'react'
 import { convertDate } from '../utils.js'
 import Animate from 'grommet/components/Animate'
 import Box from 'grommet/components/Box'
-import Headline from 'grommet/components/Headline'
+import Heading from 'grommet/components/Heading'
 import MembershipCounter from './MembershipCounter'
 
 export default ({ memberSince }) => {
@@ -17,9 +17,10 @@ export default ({ memberSince }) => {
         textAlign='center'
         full='horizontal'
         pad='medium'>
-        <Headline size='small' strong>
-          MailChimp User Since {timeAsMember}
-        </Headline>
+        <Heading align='center'
+          tag='h2'>
+          MailChimp User Since { timeAsMember }
+        </Heading>
         <MembershipCounter time={memberSince} />
       </Box>
     </Animate>
