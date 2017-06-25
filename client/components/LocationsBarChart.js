@@ -63,11 +63,11 @@ export default class LocationsBarChart extends Component {
           <Layers>
             <Grid rows={5} columns={5} />
             <Bar values={this.numbers}
-              colorIndex='graph-2'
+              colorIndex='brand'
               max={30}
-              points
+              points={false}
               activeIndex={this.state.activeIndex} />
-            <Marker colorIndex='graph-2'
+            <Marker colorIndex='brand'
               count={10}
               vertical
               index={this.state.activeIndex} />

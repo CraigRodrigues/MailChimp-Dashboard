@@ -33,6 +33,7 @@ export default ({myStats, industryRate}) => {
               Opens (Ind)
             </Label>
             <Meter id='meter-1-id'
+              colorIndex='brand'
               label={false}
               max={30}
               min={0}
@@ -49,6 +50,7 @@ export default ({myStats, industryRate}) => {
               Opens (You)
             </Label>
             <Meter label={false}
+              colorIndex='brand'
               max={30}
               min={0}
               value={parseFloat(myOpenRate)}
@@ -64,6 +66,7 @@ export default ({myStats, industryRate}) => {
               Clicks (Ind)
             </Label>
             <Meter label={false}
+              colorIndex='brand'
               max={10}
               min={0}
               value={parseFloat(industryClickRate)}
@@ -79,6 +82,7 @@ export default ({myStats, industryRate}) => {
               Clicks (You)
             </Label>
             <Meter label={false}
+              colorIndex='brand'
               max={10}
               min={0}
               value={parseFloat(myClickRate)}
