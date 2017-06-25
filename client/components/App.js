@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import GrommetApp from 'grommet/components/App'
-import Headline from 'grommet/components/Headline'
 import Box from 'grommet/components/Box'
 import Spinning from 'grommet/components/icons/Spinning'
 import Nav from './Nav'
@@ -42,8 +41,6 @@ export default class App extends Component {
         listStats: list.data[0].stats,
         locations: list.data[2].locations
       })
-
-      console.log(this.state)
     })
   }
 
