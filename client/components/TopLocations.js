@@ -4,7 +4,9 @@ import Heading from 'grommet/components/Heading'
 import LocationsBarChart from './LocationsBarChart'
 
 export default ({ countries }) => (
-  <Box direction='column'
+  <Box
+    flex='shrink'
+    direction='column'
     align='center'
     alignContent='center'
     alignSelf='stretch'
