@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from 'grommet/components/Header'
 import Title from 'grommet/components/Title'
 import Image from 'grommet/components/Image'
+import Layer from 'grommet/components/Layer'
 import AboutModal from './AboutModal'
 import Box from 'grommet/components/Box'
 import Menu from 'grommet/components/Menu'
@@ -20,11 +21,10 @@ export default class Nav extends Component {
     this._onClose = this._onClose.bind(this)
   }
 
-  _activate (continent, prop = continent) {
+  _activate (event, option) {
     this.setState({
       active: true,
-      continentSelected: continent,
-      continentProperty: prop
+      modal: option
     })
   }
 
@@ -38,20 +38,19 @@ export default class Nav extends Component {
 
     let activeLayer = null
 
-    if (this.state.active) {
+    if (this.state.active && this.state.modal === 'about') {
       activeLayer = (
         <Layer onClose={this._onClose}
           closer
           align='center'>
-          <MapModal continent={this.state.continentSelected}
-            count={numberOfCountries[this.state.continentProperty]} />
+          <AboutModal />
         </Layer>
       )
     }
 
     return (
       <div>
-      { activeLayer }
+        { activeLayer }
         <Header fixed
           size='medium'
           splash={false}
@@ -71,7 +70,7 @@ export default class Nav extends Component {
               label={`${first_name} ${last_name}`}
               icon={<DownIcon />}
               dropAlign={{'right': 'right'}}>
-              <Anchor>
+              <Anchor onClick={(e) => this._activate(e, 'about')}>
                 Enter API Key
               </Anchor>
               <Anchor>
