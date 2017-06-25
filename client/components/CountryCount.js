@@ -17,14 +17,11 @@ export default ({countries}) => (
     pad='small'>
     <Heading align='center'
       tag='h2'>
-      Countries
+      <GlobeIcon />
+      {' '}Countries
     </Heading>
     <Value value={countries.length}
       label={`${convertToPercentage(countries.length / TOTAL_COUNTRIES)}% of the World`}
-      icon={
-        <GlobeIcon size='large'
-          colorIndex='grey-1-a'
-        />}
       responsive
       colorIndex='grey-1-a'
       size='large' />

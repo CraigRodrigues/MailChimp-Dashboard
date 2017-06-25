@@ -4,6 +4,7 @@ import MapModal from './MapModal'
 import Heading from 'grommet/components/Heading'
 import Layer from 'grommet/components/Layer'
 import Legend from 'grommet/components/Legend'
+import MapLocationIcon from 'grommet/components/icons/base/MapLocation'
 import WorldMap from 'grommet/components/WorldMap'
 import Box from 'grommet/components/Box'
 
@@ -181,7 +182,8 @@ export default class Map extends Component {
       <Box>
         { activeLayer }
         <Heading align='center' tag='h2'>
-          Subscriber World Map
+          <MapLocationIcon />
+          {' '}Subscriber Map
         </Heading>
         <Box className='infographic-map'>
           <WorldMap series={this.createMapSeries(numberOfSubscribers)} />

@@ -41,32 +41,22 @@ export default class LastSubscriber extends Component {
         full={false}
         pad='small'>
         <Heading align='center'
-          tag='h2'
-          margin='small'>
-          Last Subscriber
+          tag='h2'>
+          <ClockIcon />
+          {' '}Last Subscribe
         </Heading>
-        <Box flex direction='row' justify='center' align='center'>
-          <Box pad={{horizontal: 'small', vertical: 'none'}}>
-            <ClockIcon size='large' />
-          </Box>
-          <Box pad={{horizontal: 'small', vertical: 'none'}}>
-            <Value value={this.state.days}
-              align='start'
-              responsive
-              colorIndex='grey-1-a'
-              size='medium' />
-            <Value value={this.state.hours}
-              align='start'
-              responsive
-              colorIndex='grey-1-a'
-              size='medium' />
-            <Value value={this.state.minutes}
-              align='start'
-              responsive
-              colorIndex='grey-1-a'
-              size='medium' />
-          </Box>
-        </Box>
+        <Value value={this.state.days}
+          responsive
+          colorIndex='grey-1-a'
+          size='medium' />
+        <Value value={this.state.hours}
+          responsive
+          colorIndex='grey-1-a'
+          size='medium' />
+        <Value value={this.state.minutes}
+          responsive
+          colorIndex='grey-1-a'
+          size='medium' />
       </Box>
     )
   }

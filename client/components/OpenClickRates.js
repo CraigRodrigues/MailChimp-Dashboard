@@ -23,7 +23,7 @@ export default ({myStats, industryRate}) => {
       <Heading align='center'
         tag='h2'>
         <CursorIcon />
-        {' '}Open and Click Rates
+        {' '}Open & Click Rates
       </Heading>
       <Chart full={false}
         horizontalAlignWith='meter-1-id'>
