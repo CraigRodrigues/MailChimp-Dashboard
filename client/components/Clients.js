@@ -11,8 +11,7 @@ export default ({clients}) => (
     textAlign='center'
     full={false}
     basis='1/2'
-    pad='small'
-    separator='right'>
+    pad='small'>
     <Heading align='center' tag='h2'>
       Clients
     </Heading>
