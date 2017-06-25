@@ -25,7 +25,7 @@ export default ({clients}) => {
     <div>
       <Doughnut data={parseData(clients)}
         width={350}
-        height={400}
+        height={500}
         options={{
           maintainAspectRatio: true,
           responsive: true
