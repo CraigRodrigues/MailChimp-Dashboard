@@ -24,7 +24,7 @@ export default ({countries}) => {
       <Bar
         data={parseData(countries)}
         width={350}
-        height={350}
+        height={550}
         options={{
           maintainAspectRatio: true,
           responsive: true

@@ -9,7 +9,6 @@ export default ({ numberOfSubscribers }) => (
     align='center'
     alignContent='center'
     textAlign='center'
-    full='horizontal'
     pad='small'>
     <Heading align='center'
       tag='h2'>

@@ -18,7 +18,6 @@ export default ({myStats, industryRate}) => {
       align='center'
       alignContent='center'
       textAlign='center'
-      full='horizontal'
       pad='small'>
       <Heading align='center'
         tag='h2'>
