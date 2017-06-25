@@ -12,7 +12,7 @@ export default () => (
       alignSelf='center'
       textAlign='center'
       full>
-      <Image src='/assets/mc_logo.png' size='thumb' />
+      <Image src='/assets/mc_script_black.png' size='small' />
       <Spinning size='large' />
     </Box>
   </GrommetApp>
