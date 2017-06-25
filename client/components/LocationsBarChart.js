@@ -38,7 +38,6 @@ export default class LocationsBarChart extends Component {
       <Chart full>
         <Axis count={4}
           labels={[
-            {'index': 0, 'label': '5'},
             {'index': 1, 'label': '15'},
             {'index': 2, 'label': '25'},
             {'index': 3, 'label': '35'}
@@ -47,11 +46,11 @@ export default class LocationsBarChart extends Component {
         <Chart vertical>
           <MarkerLabel count={10}
             index={this.state.activeIndex}
-            label={<Value value={this.state.activeLabel} />} />
+            label={<Value size='small' value={this.state.activeLabel} />} />
           <Base height='medium'
             width='large' />
           <Layers>
-            <Grid rows={5} columns={5} />
+            <Grid rows={4} columns={4} />
             <Bar values={this.numbers}
               colorIndex='brand'
               max={30}

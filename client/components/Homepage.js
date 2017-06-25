@@ -14,15 +14,13 @@ import Map from './Map'
 export default ({account, campaigns, listStats, locations, clients}) => (
   <div>
     <MemberSince memberSince={account.member_since} />
-    <Box flex='shrink' direction='row' justify='center' align='center'>
+    <Box flex direction='row' justify='center' align='center'>
       <Box>
         <SubscriberCount numberOfSubscribers={account.total_subscribers} />
         <TotalEmails campaigns={campaigns} />
         <OpenClickRates industryRate={account.industry_stats} myStats={listStats} />
       </Box>
-      <Box alignContent='stretch' alignSelf='stretch'>
-        <Clients clients={clients} />
-      </Box>
+      <Clients clients={clients} />
     </Box>
     <Box flex direction='row' justify='center' align='center'>
       <TopLocations countries={locations} />
