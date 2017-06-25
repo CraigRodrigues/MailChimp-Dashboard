@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-// import { Bar } from 'react-chartjs-2'
-// import Box from 'grommet/components/Box'
-import Chart, {Axis, Bar, Base, Grid, Layers, Marker, MarkerLabel, HotSpots} from 'grommet/components/chart/Chart'
+import Chart,
+  {Axis, Bar, Base, Grid, Layers, Marker, MarkerLabel, HotSpots}
+  from 'grommet/components/chart/Chart'
 import Value from 'grommet/components/Value'
 
 const parseData = countries => {
@@ -80,33 +80,3 @@ export default class LocationsBarChart extends Component {
     )
   }
 }
-
-// export default ({countries}) => {
-//   return (
-//     <Box flex='shrink'>
-//       <Bar
-//         data={parseData(countries)}
-//         width={650}
-//         height={350}
-//         options={{
-//           maintainAspectRatio: true,
-//           responsive: true,
-//           scales: {
-//             xAxes: [{
-//               stacked: false,
-//               beginAtZero: true,
-//               scaleLabel: {
-//                 labelString: 'Country'
-//               },
-//               ticks: {
-//                 stepSize: 1,
-//                 min: 0,
-//                 autoSkip: false
-//               }
-//             }]
-//           }
-//         }}
-//       />
-//     </Box>
-//   )
-// }
