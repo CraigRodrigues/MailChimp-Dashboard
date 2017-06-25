@@ -22,8 +22,9 @@ export default class Nav extends Component {
         size='medium'
         splash={false}
         flex >
-        <Image src='/assets/mc_logo.png'
-          size='thumb' />
+        <a href='http://www.mailchimp.com'>
+          <Image src='/assets/mc_logo.png' size='thumb' />
+        </a>
         <Title>
           Dashboard
         </Title>
