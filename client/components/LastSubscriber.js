@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Box from 'grommet/components/Box'
 import Heading from 'grommet/components/Heading'
+import Value from 'grommet/components/Value'
+import ClockIcon from 'grommet/components/icons/base/Clock'
 import countdown from 'countdown'
 
 export default class LastSubscriber extends Component {
@@ -31,7 +33,9 @@ export default class LastSubscriber extends Component {
 
   render () {
     return (
-      <Box direction='column'
+      <Box
+        flex
+        direction='column'
         align='center'
         alignContent='center'
         alignSelf='center'
@@ -39,21 +43,32 @@ export default class LastSubscriber extends Component {
         full={false}
         pad='small' >
         <Heading align='center'
-          tag='h2'>
+          tag='h2'
+          margin='small'>
           Last Subscriber
         </Heading>
-        <Heading align='center'
-          tag='h3'>
-          { this.state.days }
-        </Heading>
-        <Heading align='center'
-          tag='h3'>
-          { this.state.hours }
-        </Heading>
-        <Heading align='center'
-          tag='h3'>
-          { this.state.minutes }
-        </Heading>
+        <Box flex direction='row' justify='center' align='center'>
+          <Box pad={{horizontal: 'small', vertical: 'none'}}>
+            <ClockIcon size='large' />
+          </Box>
+          <Box pad={{horizontal: 'small', vertical: 'none'}}>
+            <Value value={this.state.days}
+              align='start'
+              responsive
+              colorIndex='grey-1-a'
+              size='medium' />
+            <Value value={this.state.hours}
+              align='start'
+              responsive
+              colorIndex='grey-1-a'
+              size='medium' />
+            <Value value={this.state.minutes}
+              align='start'
+              responsive
+              colorIndex='grey-1-a'
+              size='medium' />
+          </Box>
+        </Box>
       </Box>
     )
   }
