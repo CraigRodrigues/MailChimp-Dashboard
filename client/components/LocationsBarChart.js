@@ -27,7 +27,21 @@ export default ({countries}) => {
         height={550}
         options={{
           maintainAspectRatio: true,
-          responsive: true
+          responsive: true,
+          scales: {
+            xAxes: [{
+              stacked: false,
+              beginAtZero: true,
+              scaleLabel: {
+                labelString: 'Country'
+              },
+              ticks: {
+                stepSize: 1,
+                min: 0,
+                autoSkip: false
+              }
+            }]
+          }
         }}
       />
     </div>
