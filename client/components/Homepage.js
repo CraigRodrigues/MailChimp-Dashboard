@@ -1,7 +1,6 @@
 import React from 'react'
 // import Article from 'grommet/components/Article'
 import Box from 'grommet/components/Box'
-import Columns from 'grommet/components/Columns'
 import MemberSince from './MemberSince'
 import SubscriberCount from './SubscriberCount'
 import TotalEmails from './TotalEmails'
@@ -15,30 +14,23 @@ import Map from './Map'
 export default ({account, campaigns, listStats, locations, clients}) => (
   <div>
     <MemberSince memberSince={account.member_since} />
-    <Box flex='shrink' direction='row' justify='center'>
+    <Box flex='shrink' direction='row' justify='center' align='center'>
       <Box>
         <SubscriberCount numberOfSubscribers={account.total_subscribers} />
         <TotalEmails campaigns={campaigns} />
         <OpenClickRates industryRate={account.industry_stats} myStats={listStats} />
       </Box>
       <Box alignContent='stretch' alignSelf='stretch'>
-        <TopLocations countries={locations} />
-      </Box>
-    </Box>
-    <Columns size='medium'
-      justify='center'
-      maxCount={2}
-      masonry={false} >
-      <Box align='center' margin='small'>
         <Clients clients={clients} />
       </Box>
-      <Box align='center'
-        margin='small'
-        alignSelf='center'>
-        <CountryCount countries={locations} />
-        <LastSubscriber listStats={listStats} />
-      </Box>
-    </Columns>
+    </Box>
+    <Box flex direction='row' justify='center' align='center'>
+      <TopLocations countries={locations} />
+    </Box>
+    <Box flex direction='row' justify='center' align='center'>
+      <CountryCount countries={locations} />
+      <LastSubscriber listStats={listStats} />
+    </Box>
     <Map countries={locations} />
   </div>
 )
