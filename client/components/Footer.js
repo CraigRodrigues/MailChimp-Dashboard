@@ -20,7 +20,7 @@ export default () => (
       align='center'
       pad={{'between': 'medium'}}>
       <Paragraph margin='none'>
-        Made by <a href='http://www.craigrodrigues.com'>Craig Rodrigues</a>
+        Made by <a href='http://www.linkedin.com/in/CraigRodrigues'>Craig Rodrigues</a>
       </Paragraph>
     </Box>
   </GrommetFooter>
