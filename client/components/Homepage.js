@@ -1,5 +1,4 @@
 import React from 'react'
-// import Article from 'grommet/components/Article'
 import Box from 'grommet/components/Box'
 import MemberSince from './MemberSince'
 import SubscriberCount from './SubscriberCount'

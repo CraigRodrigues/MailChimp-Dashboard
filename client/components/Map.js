@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { countriesByContinent } from '../data'
 import MapModal from './MapModal'
+import Animate from 'grommet/components/Animate'
 import Heading from 'grommet/components/Heading'
 import Layer from 'grommet/components/Layer'
 import Legend from 'grommet/components/Legend'
@@ -179,40 +180,42 @@ export default class Map extends Component {
     }
 
     return (
-      <Box>
-        { activeLayer }
-        <Heading align='center' tag='h2'>
-          <MapLocationIcon />
-          {' '}Subscriber Map
-        </Heading>
-        <Box className='infographic-map'>
-          <WorldMap series={this.createMapSeries(numberOfSubscribers)} />
+      <Animate enter={{'animation': 'slide-up', 'duration': 1000, 'delay': 0}}>
+        <Box>
+          { activeLayer }
+          <Heading align='center' tag='h2'>
+            <MapLocationIcon />
+            {' '}Subscriber Map
+          </Heading>
+          <Box className='infographic-map'>
+            <WorldMap series={this.createMapSeries(numberOfSubscribers)} />
+          </Box>
+          <Box align='center' pad={{vertical: 'small'}}>
+            <Legend series={[
+              {
+                'label': '0-50',
+                'colorIndex': 'graph-1'
+              },
+              {
+                'label': '51-249',
+                'colorIndex': 'graph-2'
+              },
+              {
+                'label': '250-999',
+                'colorIndex': 'accent-1'
+              },
+              {
+                'label': '1000-1999',
+                'colorIndex': 'accent-2'
+              },
+              {
+                'label': '2000+',
+                'colorIndex': 'brand'
+              }
+            ]} />
+          </Box>
         </Box>
-        <Box align='center' pad={{vertical: 'small'}}>
-          <Legend series={[
-            {
-              'label': '0-50',
-              'colorIndex': 'graph-1'
-            },
-            {
-              'label': '51-249',
-              'colorIndex': 'graph-2'
-            },
-            {
-              'label': '250-999',
-              'colorIndex': 'accent-1'
-            },
-            {
-              'label': '1000-1999',
-              'colorIndex': 'accent-2'
-            },
-            {
-              'label': '2000+',
-              'colorIndex': 'brand'
-            }
-          ]} />
-        </Box>
-      </Box>
+      </Animate>
     )
   }
 }

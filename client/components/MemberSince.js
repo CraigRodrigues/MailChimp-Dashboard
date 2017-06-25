@@ -9,8 +9,7 @@ export default ({ memberSince }) => {
   let timeAsMember = convertDate(memberSince)
 
   return (
-    <Animate
-      enter={{'animation': 'slide-up', 'duration': 1000, 'delay': 0}} >
+    <Animate enter={{'animation': 'slide-up', 'duration': 1000, 'delay': 0}}>
       <Box direction='column'
         align='center'
         alignContent='center'
