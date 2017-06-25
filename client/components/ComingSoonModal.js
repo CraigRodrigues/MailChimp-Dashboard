@@ -16,10 +16,10 @@ export default () => (
       truncate={false}
       align='center'
       margin='small'>
-      About
+      Coming Soon
     </Heading>
     <Paragraph>
-      About Me!
+      Feature coming in the near future!
     </Paragraph>
   </Box>
 )

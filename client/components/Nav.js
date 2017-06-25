@@ -4,6 +4,7 @@ import Title from 'grommet/components/Title'
 import Image from 'grommet/components/Image'
 import Layer from 'grommet/components/Layer'
 import AboutModal from './AboutModal'
+import ComingSoonModal from './ComingSoonModal'
 import Box from 'grommet/components/Box'
 import Menu from 'grommet/components/Menu'
 import Anchor from 'grommet/components/Anchor'
@@ -32,18 +33,27 @@ export default class Nav extends Component {
     this.setState({ active: false })
   }
 
+  selectModal (modal) {
+    const modals = {
+      about: <AboutModal />,
+      comingSoon: <ComingSoonModal />
+    }
+
+    return modals[modal]
+  }
+
   render () {
     console.log(this.props)
     let { first_name, last_name } = this.props.account
 
     let activeLayer = null
 
-    if (this.state.active && this.state.modal === 'about') {
+    if (this.state.active) {
       activeLayer = (
         <Layer onClose={this._onClose}
           closer
           align='center'>
-          <AboutModal />
+          {this.selectModal(this.state.modal)}
         </Layer>
       )
     }
@@ -70,13 +80,13 @@ export default class Nav extends Component {
               label={`${first_name} ${last_name}`}
               icon={<DownIcon />}
               dropAlign={{'right': 'right'}}>
-              <Anchor onClick={(e) => this._activate(e, 'about')}>
+              <Anchor onClick={(e) => this._activate(e, 'comingSoon')}>
                 Enter API Key
               </Anchor>
-              <Anchor>
+              <Anchor onClick={(e) => this._activate(e, 'about')}>
                 About
               </Anchor>
-              <Anchor>
+              <Anchor onClick={(e) => this._activate(e, 'comingSoon')}>
                 Logout
               </Anchor>
             </Menu>
