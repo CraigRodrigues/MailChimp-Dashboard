@@ -1,5 +1,6 @@
 import React from 'react'
 import { Bar } from 'react-chartjs-2'
+import Box from 'grommet/components/Box'
 
 const parseData = (countries) => {
   return {
@@ -20,11 +21,11 @@ const parseData = (countries) => {
 
 export default ({countries}) => {
   return (
-    <div>
+    <Box flex='shrink'>
       <Bar
         data={parseData(countries)}
-        width={350}
-        height={550}
+        width={650}
+        height={350}
         options={{
           maintainAspectRatio: true,
           responsive: true,
@@ -44,6 +45,6 @@ export default ({countries}) => {
           }
         }}
       />
-    </div>
+    </Box>
   )
 }
