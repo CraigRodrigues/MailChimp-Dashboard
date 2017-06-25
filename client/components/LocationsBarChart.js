@@ -6,18 +6,8 @@ import Value from 'grommet/components/Value'
 
 const parseData = countries => {
   return {
-    labels: countries.map(item => item.country),
-    datasets: [
-      {
-        label: 'Percent %',
-        backgroundColor: 'rgba(255,99,132,0.2)',
-        borderColor: 'rgba(255,99,132,1)',
-        borderWidth: 1.5,
-        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-        hoverBorderColor: 'rgba(255,99,132,1)',
-        data: countries.map(item => item.percent)
-      }
-    ]
+    names: countries.map(item => item.country),
+    numbers: countries.map(item => item.percent)
   }
 }
 
@@ -25,9 +15,9 @@ export default class LocationsBarChart extends Component {
   constructor (props) {
     super(props)
 
-    let data = parseData(this.props.countries)
-    this.names = data.labels
-    this.numbers = data.datasets[0].data
+    const data = parseData(this.props.countries)
+    this.names = data.names
+    this.numbers = data.numbers
 
     this.state = {
       activeIndex: 0,
