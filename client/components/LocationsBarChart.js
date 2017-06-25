@@ -31,7 +31,7 @@ export default class LocationsBarChart extends Component {
 
     this.state = {
       activeIndex: 0,
-      activeLabel: 'USA'
+      activeLabel: `${this.names[0]} (${this.numbers[0]}%)`
     }
 
     this.handleActive = this.handleActive.bind(this)
@@ -39,7 +39,7 @@ export default class LocationsBarChart extends Component {
 
   handleActive (index) {
     if (index !== undefined) {
-      this.setState({activeIndex: index, activeLabel: this.names[index]})
+      this.setState({activeIndex: index, activeLabel: `${this.names[index]} (${this.numbers[index]}%)`})
     }
   }
 
