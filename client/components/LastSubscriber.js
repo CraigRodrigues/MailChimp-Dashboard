@@ -34,14 +34,12 @@ export default class LastSubscriber extends Component {
   render () {
     return (
       <Box
-        flex
         direction='column'
         align='center'
         alignContent='center'
-        alignSelf='center'
         textAlign='center'
         full={false}
-        pad='small' >
+        pad='small'>
         <Heading align='center'
           tag='h2'
           margin='small'>
