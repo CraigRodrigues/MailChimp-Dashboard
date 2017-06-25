@@ -4,6 +4,7 @@ import Box from 'grommet/components/Box'
 import Value from 'grommet/components/Value'
 import Heading from 'grommet/components/Heading'
 import Chart, { Base } from 'grommet/components/chart/Chart'
+import CursorIcon from 'grommet/components/icons/base/Cursor'
 import Label from 'grommet/components/Label'
 import Meter from 'grommet/components/Meter'
 
@@ -21,7 +22,8 @@ export default ({myStats, industryRate}) => {
       pad='small'>
       <Heading align='center'
         tag='h2'>
-        Open and Click Rates
+        <CursorIcon />
+        {' '}Open and Click Rates
       </Heading>
       <Chart full={false}
         horizontalAlignWith='meter-1-id'>
