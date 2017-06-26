@@ -20,22 +20,21 @@ export default () => (
       margin='small'>
       About
     </Heading>
-    <Paragraph>
+    <Paragraph margin='small'>
       Project created by me, <a href='http://www.craigrodrigues.com'>Craig Rodrigues</a>. I'm a software engineer living in Atlanta, GA.
-      I wanted to use the <a href='http://developer.mailchimp.com/'>MailChimp API V3</a> to get make a visualization dashboard for my business <a href='www.ggbutton.com'>GG Button!</a>
+      I wanted to use the <a href='http://developer.mailchimp.com/'>MailChimp API V3</a> to make a visualization dashboard for my business <a href='www.ggbutton.com'>GG Button!</a>
     </Paragraph>
-    <Paragraph>
+    <Paragraph margin='small'>
       By default the data shown is just mine (from GG Button). However, you can load your own data by inputting your API and datacenter. To unload your data, just select that option from the menu.
     </Paragraph>
-    <Paragraph>
-      This dashboard was created using: React, Node, Express, ChartJS, Grommet and, of course...MailChimp's API! 🤘
+    <Paragraph margin='small'>
+      This was created using: React, Node, Express, ChartJS, Grommet and, of course, MailChimp's baller API! 🤘
     </Paragraph>
-    <Paragraph>
-      Gitub Repo here:{' '}
-      <a href='https://github.com/CraigRodrigues/MailChimp-Dashboard'>
-        <SocialGithubIcon size='small' />
-      </a>
+    <Paragraph margin='none'>
+      Gitub Repo
     </Paragraph>
-    <PlatformReactjsIcon />
+    <a href='https://github.com/CraigRodrigues/MailChimp-Dashboard'>
+      <SocialGithubIcon size='small' />
+    </a>
   </Box>
 )
