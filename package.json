@@ -8,10 +8,11 @@
     "url": "https://github.com/CraigRodrigues/MailChimp-Dashboard"
   },
   "scripts": {
-    "start": "webpack -w",
-    "dev-server": "nodemon ./server/server.js",
+    "start": "NODE_ENV=production node server/index.js",
+    "dev-client": "webpack -d --watch",
+    "dev-server": "nodemon server/server.js",
     "test": "jest",
-    "build": "webpack"
+    "heroku-postbuild": "NODE_ENV=production webpack"
   },
   "keywords": [
     "mailchimp",

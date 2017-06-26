@@ -11,3 +11,4 @@ config.js
 
 # Bundle
 bundle.js
+bundle.js.map
