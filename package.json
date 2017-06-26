@@ -1,5 +1,5 @@
 {
-  "name": "Mailchimp Dashboard",
+  "name": "MailChimp-Dashboard",
   "version": "1.0.0",
   "description": "Simple MailChimp Dashboard using v3 API",
   "main": "server/server.js",
@@ -14,7 +14,7 @@
     "dev-client": "webpack -d --watch",
     "dev-server": "nodemon server/server.js",
     "test": "jest",
-    "heroku-postbuild": "NODE_ENV=production webpack"
+    "heroku-postbuild": "NODE_ENV=production webpack -p"
   },
   "keywords": [
     "mailchimp",
