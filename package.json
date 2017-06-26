@@ -1,8 +1,10 @@
 {
-  "name": "mailchimp_dashboard",
+  "name": "Mailchimp Dashboard",
   "version": "1.0.0",
-  "description": "Simple GG Button MailChimp Dashboard using v3 API",
-  "main": "index.js",
+  "description": "Simple MailChimp Dashboard using v3 API",
+  "main": "server/server.js",
+  "author": "Craig Rodrigues",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/CraigRodrigues/MailChimp-Dashboard"
