@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://github.com/CraigRodrigues/MailChimp-Dashboard"
   },
+  "engines": {
+    "node": ">=6.9.4"
+  },
   "scripts": {
     "start": "NODE_ENV=production node server/server.js",
     "dev-client": "webpack -d --watch",
