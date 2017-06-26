@@ -9,7 +9,10 @@ if (env === 'production') {
   devtool = 'cheap-module-source-map'
   plugins = plugins.concat([
     new webpack.optimize.UglifyJsPlugin(
-      { beautify: false,
+      {
+        sourceMap: true,
+        minimize: true,
+        beautify: false,
         mangle: true,
         compress: true,
         comments: false
