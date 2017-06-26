@@ -43,7 +43,6 @@ export default class Nav extends Component {
   }
 
   render () {
-    console.log(this.props)
     let { first_name, last_name } = this.props.account
 
     let activeLayer = null
