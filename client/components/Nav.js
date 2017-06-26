@@ -87,7 +87,7 @@ export default class Nav extends Component {
                 About
               </Anchor>
               <Anchor onClick={(e) => this._activate(e, 'comingSoon')}>
-                Logout
+                Reset
               </Anchor>
             </Menu>
           </Box>

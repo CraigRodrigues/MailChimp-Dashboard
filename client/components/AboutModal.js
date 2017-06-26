@@ -3,7 +3,6 @@ import Box from 'grommet/components/Box'
 import Heading from 'grommet/components/Heading'
 import Paragraph from 'grommet/components/Paragraph'
 import SocialGithubIcon from 'grommet/components/icons/base/SocialGithub'
-import PlatformReactjsIcon from 'grommet/components/icons/base/PlatformReactjs'
 
 export default () => (
   <Box responsive
@@ -21,7 +20,7 @@ export default () => (
       About
     </Heading>
     <Paragraph margin='small'>
-      Project created by me, <a href='http://www.craigrodrigues.com'>Craig Rodrigues</a>. I'm a software engineer living in Atlanta, GA.
+      Hi, I'm <a href='http://www.craigrodrigues.com'>Craig Rodrigues</a> 👋. I'm a software engineer living in Atlanta, GA.
       I wanted to use the <a href='http://developer.mailchimp.com/'>MailChimp API V3</a> to make a visualization dashboard for my business <a href='www.ggbutton.com'>GG Button!</a>
     </Paragraph>
     <Paragraph margin='small'>
