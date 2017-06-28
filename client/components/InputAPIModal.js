@@ -18,16 +18,41 @@ export default class InputAPIModal extends Component {
       value: '',
       error: ''
     }
+
+    this.validateAPIKey = this.validateAPIKey.bind(this)
   }
 
   validateAPIKey (key) {
     // Your API key may be invalid.
     if (key.length < 25) {
       // Throw error
+      console.log('No')
+
+      return 'No'
     }
 
-    // Ping / endpoint for account_id
+    let config = {
+      auth: {
+        username: 'mailkimp',
+        password: key
+      }
+    }
 
+    // Get last 3 chars for dc
+    let dc = key.slice(-3)
+
+    // Ping / endpoint for account_id
+    axios.get(`https://${dc}.api.mailchimp.com/3.0/`, config)
+      .then(response => {
+        console.log(response)
+
+        return 'Ok'
+      })
+      .catch(error => {
+        console.log(error)
+
+        return error
+      })
   }
 
   render () {
@@ -64,7 +89,7 @@ export default class InputAPIModal extends Component {
           <Footer pad={{'vertical': 'medium'}}>
             <Button label='Go'
               type='button'
-              onClick={() => console.log(this.state.value)} />
+              onClick={this.validateAPIKey(this.state.value)} />
           </Footer>
         </Form>
       </Box>
