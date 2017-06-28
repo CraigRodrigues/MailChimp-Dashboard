@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import Box from 'grommet/components/Box'
 import Heading from 'grommet/components/Heading'
 import Paragraph from 'grommet/components/Paragraph'
@@ -8,6 +9,8 @@ import Footer from 'grommet/components/Footer'
 import Button from 'grommet/components/Button'
 import TextInput from 'grommet/components/TextInput'
 
+const API_KEY_URL = 'http://kb.mailchimp.com/integrations/api-integrations/about-api-keys#Find-or-Generate-Your-API-Key'
+
 export default class InputAPIModal extends Component {
   constructor () {
     super()
@@ -15,6 +18,16 @@ export default class InputAPIModal extends Component {
       value: '',
       error: ''
     }
+  }
+
+  validateAPIKey (key) {
+    // Your API key may be invalid.
+    if (key.length < 25) {
+      // Throw error
+    }
+
+    // Ping / endpoint for account_id
+
   }
 
   render () {
@@ -36,7 +49,7 @@ export default class InputAPIModal extends Component {
         </Heading>
         <Paragraph margin='none'>
           Can't find your key? Go
-          <a href='http://kb.mailchimp.com/integrations/api-integrations/about-api-keys'>
+          <a href={API_KEY_URL}>
             {' '}here.
           </a>
         </Paragraph>
