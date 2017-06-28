@@ -12,9 +12,11 @@ export default class InputAPIModal extends Component {
   constructor () {
     super()
     this.state = {
-      value: ''
+      value: '',
+      error: ''
     }
   }
+
   render () {
     return (
       <Box responsive
@@ -32,14 +34,14 @@ export default class InputAPIModal extends Component {
           margin='small'>
           Enter Your MailChimp API Key
         </Heading>
-        <Paragraph>
+        <Paragraph margin='none'>
           Can't find your key? Go
           <a href='http://kb.mailchimp.com/integrations/api-integrations/about-api-keys'>
-            here.
+            {' '}here.
           </a>
         </Paragraph>
         <Form>
-          <FormField>
+          <FormField error={this.state.error}>
             <TextInput id='item1'
               name='api-key'
               placeHolder='12345678901234567890123456789012-xx1'
