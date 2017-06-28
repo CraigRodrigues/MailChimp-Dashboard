@@ -4,6 +4,7 @@ import Title from 'grommet/components/Title'
 import Image from 'grommet/components/Image'
 import Layer from 'grommet/components/Layer'
 import AboutModal from './AboutModal'
+import InputAPIModal from './InputAPIModal'
 import ComingSoonModal from './ComingSoonModal'
 import Box from 'grommet/components/Box'
 import Menu from 'grommet/components/Menu'
@@ -36,7 +37,8 @@ export default class Nav extends Component {
   selectModal (modal) {
     const modals = {
       about: <AboutModal />,
-      comingSoon: <ComingSoonModal />
+      comingSoon: <ComingSoonModal />,
+      inputAPI: <InputAPIModal />
     }
 
     return modals[modal]
@@ -79,7 +81,7 @@ export default class Nav extends Component {
               label={`${first_name} ${last_name}`}
               icon={<DownIcon />}
               dropAlign={{'right': 'right'}}>
-              <Anchor onClick={(e) => this._activate(e, 'comingSoon')}>
+              <Anchor onClick={(e) => this._activate(e, 'inputAPI')}>
                 Enter API Key
               </Anchor>
               <Anchor onClick={(e) => this._activate(e, 'about')}>
