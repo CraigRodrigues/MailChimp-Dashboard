@@ -8,9 +8,9 @@ const getAccountData = (req, res) => {
 }
 
 const validateKey = (req, res) => {
-  Mailchimp.validateKey(req.apiKey)
+  Mailchimp.validateKey(req.body.apiKey)
     .then(data => res.send(data))
-    .catch(error => errorHandler(error, res, 500))
+    .catch(error => res.send(error))
 }
 
 module.exports = { getAccountData, validateKey }

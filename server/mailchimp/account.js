@@ -23,12 +23,16 @@ const accountDetails = () => {
 }
 
 const validateKey = (key) => {
+  // Create wrapper with key to test
   let axios = require('../wrapper')(key)
 
-  return axios.get('/', { params: { fields: ['account_id'] } })
-    .then(response => response.data)
+  return axios.get('/', { params: { fields: 'account_id' } })
+    .then(response => {
+      return response.data
+    })
     .catch(err => {
-      console.log(err)
+      console.log(err.message)
+      return 'Invalid Key'
     })
 }
 

@@ -26,32 +26,22 @@ export default class InputAPIModal extends Component {
     // Your API key may be invalid.
     if (key.length < 25) {
       // Throw error
-      console.log('No')
-
-      return 'No'
+      this.setState({error: 'Invalid Key!'})
+      return
     }
 
-    let config = {
-      auth: {
-        username: 'mailkimp',
-        password: key
-      }
-    }
-
-    // Get last 3 chars for dc
-    let dc = key.slice(-3)
-
-    // Ping / endpoint for account_id
-    axios.get(`https://${dc}.api.mailchimp.com/3.0/`, config)
+    axios.post('/api/account', { apiKey: this.state.value })
       .then(response => {
-        console.log(response)
-
-        return 'Ok'
+        if (response.data === 'Invalid Key') {
+          this.setState({error: 'Invalid Key!'})
+        } else {
+          // Restart the entire app with JWT being send and used as key
+          this.setState({error: ''})
+          console.log('Success')
+        }
       })
       .catch(error => {
         console.log(error)
-
-        return error
       })
   }
 
@@ -89,7 +79,7 @@ export default class InputAPIModal extends Component {
           <Footer pad={{'vertical': 'medium'}}>
             <Button label='Go'
               type='button'
-              onClick={this.validateAPIKey(this.state.value)} />
+              onClick={() => this.validateAPIKey(this.state.value)} />
           </Footer>
         </Form>
       </Box>
