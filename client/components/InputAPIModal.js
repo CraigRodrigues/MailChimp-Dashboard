@@ -36,7 +36,7 @@ export default class InputAPIModal extends Component {
           this.setState({error: 'Invalid Key!'})
         } else {
           // Restart the entire app with JWT being send and used as key
-          this.setState({error: ''})
+          this.setState({value: '', error: ''})
           console.log('Success')
         }
       })
