@@ -3,8 +3,9 @@ const Account = require('./routes/account')
 const Lists = require('./routes/lists')
 const Campaigns = require('./routes/campaigns')
 
-// Account Details
+// Account
 router.get('/account', Account.getAccountData)
+router.post('/account', Account.validateKey) // POST used here since JWT resource may be created
 
 // List Metrics, Location Data, Client Data
 router.get('/lists', Lists.getListData)

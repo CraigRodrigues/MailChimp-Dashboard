@@ -1,5 +1,3 @@
-const axios = require('../wrapper')
-
 const config = {
   params: {
     fields: [
@@ -15,6 +13,8 @@ const config = {
 }
 
 const accountDetails = () => {
+  let axios = require('../wrapper')()
+
   return axios.get('/', config)
     .then(response => response.data)
     .catch(err => {
@@ -22,6 +22,14 @@ const accountDetails = () => {
     })
 }
 
-module.exports = {
-  accountDetails
+const validateKey = (key) => {
+  let axios = require('../wrapper')(key)
+
+  return axios.get('/', { params: { fields: ['account_id'] } })
+    .then(response => response.data)
+    .catch(err => {
+      console.log(err)
+    })
 }
+
+module.exports = { accountDetails, validateKey }
