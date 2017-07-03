@@ -2,7 +2,6 @@ const myList = 'b8e2c4cce3'
 
 // Returns config object with the correct fields needed
 // Takes fields as first arg, and optional params as extra
-// setConfig(fields, [params])
 const setConfig = (fields, ...params) => {
   return {
     params: { fields }
