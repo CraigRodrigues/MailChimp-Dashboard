@@ -10,10 +10,12 @@ import Label from 'grommet/components/Label'
 import Meter from 'grommet/components/Meter'
 
 export default ({myStats, industryRate}) => {
-  const myOpenRate = convertToPercentage(myStats.open_rate)
-  const myClickRate = convertToPercentage(myStats.click_rate)
-  const industryOpenRate = convertToPercentage(industryRate.open_rate)
-  const industryClickRate = convertToPercentage(industryRate.click_rate)
+  console.log(myStats)
+  console.log(industryRate)
+  const myOpenRate = myStats ? convertToPercentage(myStats.open_rate) : 0
+  const myClickRate = myStats ? convertToPercentage(myStats.click_rate) : 0
+  const industryOpenRate = industryRate ? convertToPercentage(industryRate.open_rate) : 0
+  const industryClickRate = industryRate ? convertToPercentage(industryRate.click_rate) : 0
 
   return (
     <Animate enter={{'animation': 'slide-up', 'duration': 1000, 'delay': 0}}>
