@@ -4,6 +4,7 @@ import Title from 'grommet/components/Title'
 import Image from 'grommet/components/Image'
 import Layer from 'grommet/components/Layer'
 import AboutModal from './AboutModal'
+import InputAPIModal from './InputAPIModal'
 import ComingSoonModal from './ComingSoonModal'
 import Box from 'grommet/components/Box'
 import Menu from 'grommet/components/Menu'
@@ -20,6 +21,7 @@ export default class Nav extends Component {
 
     this._activate = this._activate.bind(this)
     this._onClose = this._onClose.bind(this)
+    this.resetLocalStorage = this.resetLocalStorage.bind(this)
   }
 
   _activate (event, option) {
@@ -29,21 +31,31 @@ export default class Nav extends Component {
     })
   }
 
-  _onClose () {
+  _onClose (input) {
     this.setState({ active: false })
+
+    if (input === 'refresh') {
+      this.props.getNewData()
+    }
   }
 
   selectModal (modal) {
     const modals = {
       about: <AboutModal />,
-      comingSoon: <ComingSoonModal />
+      comingSoon: <ComingSoonModal />,
+      inputAPI: <InputAPIModal close={this._onClose} />
     }
 
     return modals[modal]
   }
 
+  resetLocalStorage () {
+    localStorage.clear()
+    this.props.getNewData()
+  }
+
   render () {
-    let { first_name, last_name } = this.props.account
+    let { account_name } = this.props.account
 
     let activeLayer = null
 
@@ -76,16 +88,16 @@ export default class Nav extends Component {
             responsive={false}>
             <Menu responsive
               pad='small'
-              label={`${first_name} ${last_name}`}
+              label={account_name}
               icon={<DownIcon />}
               dropAlign={{'right': 'right'}}>
-              <Anchor onClick={(e) => this._activate(e, 'comingSoon')}>
-                Enter API Key
+              <Anchor onClick={(e) => this._activate(e, 'inputAPI')}>
+                {localStorage.api_token ? 'API Key Loaded' : 'Enter API Key'}
               </Anchor>
               <Anchor onClick={(e) => this._activate(e, 'about')}>
                 About
               </Anchor>
-              <Anchor onClick={(e) => this._activate(e, 'comingSoon')}>
+              <Anchor onClick={this.resetLocalStorage}>
                 Reset
               </Anchor>
             </Menu>

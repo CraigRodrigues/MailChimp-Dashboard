@@ -5,7 +5,7 @@ const convertDate = (time) => {
 }
 
 const calculateTotalEmails = (list) => {
-  return list.map(campaign => campaign.emails_sent).reduce((a, b) => a + b)
+  return list.map(campaign => campaign.emails_sent).reduce((a, b) => a + b, 0)
 }
 
 // If number is less than one conver to %

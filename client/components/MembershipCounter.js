@@ -6,13 +6,19 @@ export default class MembershipCounter extends Component {
   constructor (props) {
     super(props)
     this.state = {}
+    this.loadInterval = false
   }
 
   componentWillMount () {
-    countdown(new Date(this.props.time), (timer) => {
+    this.loadInterval = countdown(new Date(this.props.time), (timer) => {
       let countdown = timer.toString().replace(/, |( and )/g, ' : ')
       this.setState({ countdown: countdown })
     }, countdown.DEFAULTS)
+  }
+
+  componentWillUnmount () {
+    this.loadInterval && clearInterval(this.loadInterval)
+    this.loadInterval = false
   }
 
   render () {

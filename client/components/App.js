@@ -6,26 +6,35 @@ import Nav from './Nav'
 import Homepage from './Homepage'
 import Footer from './Footer'
 
-const getAccountData = () => {
-  return axios.get('/api/account')
+const getAccountData = (config) => {
+  return axios.get('/api/account', config)
 }
 
-const getListData = () => {
-  return axios.get('/api/lists')
+const getListData = (config) => {
+  return axios.get('/api/lists', config)
 }
 
-const getCampaignData = () => {
-  return axios.get('/api/campaigns')
+const getCampaignData = (config) => {
+  return axios.get('/api/campaigns', config)
 }
 
 const getAllData = () => {
-  return Promise.all([getAccountData(), getListData(), getCampaignData()])
+  const key = localStorage.getItem('api_token') || null
+  const config = {
+    headers: {'Authorization': `Bearer ${key}`}
+  }
+
+  return Promise.all([getAccountData(config), getListData(config), getCampaignData(config)])
 }
 
 export default class App extends Component {
   constructor () {
     super()
-    this.state = null
+    this.state = {
+      fetching: false
+    }
+
+    this.getNewData = this.getNewData.bind(this)
   }
 
   componentWillMount () {
@@ -41,13 +50,39 @@ export default class App extends Component {
         locations: list.data[2].locations
       })
     })
+    .catch(err => {
+      console.log(err)
+      localStorage.clear()
+      this.getNewData()
+    })
+  }
+
+  componentWillUpdate (nextProps, nextState) {
+    if (nextState.fetching) {
+      getAllData().then(response => {
+        let [account, list, campaign] = response
+
+        this.setState({
+          account: account.data,
+          campaigns: campaign.data.campaigns,
+          clients: list.data[1].clients,
+          listStats: list.data[0].stats,
+          locations: list.data[2].locations,
+          fetching: false
+        })
+      })
+    }
+  }
+
+  getNewData () {
+    this.setState({ fetching: true })
   }
 
   render () {
-    if (this.state) {
+    if (this.state.account && !this.state.fetching) {
       return (
         <GrommetApp>
-          <Nav account={this.state.account} />
+          <Nav account={this.state.account} getNewData={this.getNewData} />
           <Homepage account={this.state.account}
             campaigns={this.state.campaigns}
             clients={this.state.clients}
