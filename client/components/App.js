@@ -7,7 +7,11 @@ import Homepage from './Homepage'
 import Footer from './Footer'
 
 const getAccountData = () => {
-  return axios.get('/api/account')
+  const config = {
+    headers: { 'Authorization': `Bearer herp de derp` }
+  }
+
+  return axios.get('/api/account', config)
 }
 
 const getListData = () => {
