@@ -14,7 +14,7 @@ const decodeJWT = (req, res, next) => {
     token = decoded.apiKey
   }
 
-  req.token = token
+  req.token = token || process.env.MAILCHIMP_API_KEY
   next()
 }
 
