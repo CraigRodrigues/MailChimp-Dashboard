@@ -45,7 +45,7 @@ export default class LastSubscriber extends Component {
           <Heading align='center'
             tag='h2'>
             <ClockIcon />
-            {' '}Last Subscribe
+            {' '}Last Subscriber
           </Heading>
           <Value value={this.state.days}
             responsive
