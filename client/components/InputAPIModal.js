@@ -12,8 +12,8 @@ import TextInput from 'grommet/components/TextInput'
 const API_KEY_URL = 'http://kb.mailchimp.com/integrations/api-integrations/about-api-keys#Find-or-Generate-Your-API-Key'
 
 export default class InputAPIModal extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
       value: '',
       error: ''
@@ -39,7 +39,7 @@ export default class InputAPIModal extends Component {
         } else {
           // Restart the entire app with JWT being send and used as key
           this.setState({value: '', error: ''})
-          console.log('Success')
+          this.props.close()
         }
       })
       .catch(error => {

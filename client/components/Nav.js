@@ -32,13 +32,14 @@ export default class Nav extends Component {
 
   _onClose () {
     this.setState({ active: false })
+    this.props.getNewData()
   }
 
   selectModal (modal) {
     const modals = {
       about: <AboutModal />,
       comingSoon: <ComingSoonModal />,
-      inputAPI: <InputAPIModal />
+      inputAPI: <InputAPIModal close={this._onClose} />
     }
 
     return modals[modal]

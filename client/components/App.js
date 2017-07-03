@@ -30,7 +30,11 @@ const getAllData = () => {
 export default class App extends Component {
   constructor () {
     super()
-    this.state = null
+    this.state = {
+      fetching: false
+    }
+
+    this.getNewData = this.getNewData.bind(this)
   }
 
   componentWillMount () {
@@ -48,11 +52,34 @@ export default class App extends Component {
     })
   }
 
+  componentWillUpdate (nextProps, nextState) {
+    console.log('App updating', nextState.fetching)
+
+    if (nextState.fetching) {
+      getAllData().then(response => {
+        let [account, list, campaign] = response
+
+        this.setState({
+          account: account.data,
+          campaigns: campaign.data.campaigns,
+          clients: list.data[1].clients,
+          listStats: list.data[0].stats,
+          locations: list.data[2].locations,
+          fetching: false
+        })
+      })
+    }
+  }
+
+  getNewData () {
+    this.setState({ fetching: true })
+  }
+
   render () {
-    if (this.state) {
+    if (this.state.account && !this.state.fetching) {
       return (
         <GrommetApp>
-          <Nav account={this.state.account} />
+          <Nav account={this.state.account} getNewData={this.getNewData} />
           <Homepage account={this.state.account}
             campaigns={this.state.campaigns}
             clients={this.state.clients}
