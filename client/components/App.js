@@ -6,20 +6,25 @@ import Nav from './Nav'
 import Homepage from './Homepage'
 import Footer from './Footer'
 
-const getAccountData = () => {
-  return axios.get('/api/account')
+const getAccountData = (config) => {
+  return axios.get('/api/account', config)
 }
 
-const getListData = () => {
-  return axios.get('/api/lists')
+const getListData = (config) => {
+  return axios.get('/api/lists', config)
 }
 
-const getCampaignData = () => {
-  return axios.get('/api/campaigns')
+const getCampaignData = (config) => {
+  return axios.get('/api/campaigns', config)
 }
 
 const getAllData = () => {
-  return Promise.all([getAccountData(), getListData(), getCampaignData()])
+  const key = localStorage.getItem('api_token') || null
+  const config = {
+    headers: {'Authorization': `Bearer ${key}`}
+  }
+
+  return Promise.all([getAccountData(config), getListData(config), getCampaignData(config)])
 }
 
 export default class App extends Component {

@@ -8,7 +8,6 @@ const app = express()
 
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, '../public/')))
-// Sign JWT with API key unless there isn't one present
 app.use('/api', decodeJWT, router)
 
 module.exports = app

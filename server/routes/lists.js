@@ -3,7 +3,7 @@ const Mailchimp = require('../mailchimp/lists')
 
 const getListData = (req, res) => {
   // Batch async promises
-  Promise.all([Mailchimp.listStats(), Mailchimp.clientData(), Mailchimp.locationData()])
+  Promise.all([Mailchimp.listStats(req.token), Mailchimp.clientData(req.token), Mailchimp.locationData(req.token)])
     .then(results => {
       res.send(results)
     })

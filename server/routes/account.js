@@ -3,7 +3,7 @@ const { signJWT } = require('../jwtMiddleware')
 const Mailchimp = require('../mailchimp/account')
 
 const getAccountData = (req, res) => {
-  Mailchimp.accountDetails()
+  Mailchimp.accountDetails(req.token)
     .then(data => res.send(data))
     .catch(error => errorHandler(error, res, 500))
 }

@@ -12,8 +12,8 @@ const config = {
   }
 }
 
-const accountDetails = () => {
-  let axios = require('../wrapper')()
+const accountDetails = (key) => {
+  let axios = require('../wrapper')(key)
 
   return axios.get('/', config)
     .then(response => response.data)
@@ -33,7 +33,7 @@ const validateKey = (key) => {
     })
     .catch(err => {
       console.log(err.message)
-      return 'Invalid Key'
+      return Promise.resolve('Invalid Key')
     })
 }
 

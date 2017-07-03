@@ -1,25 +1,20 @@
 const jwt = require('jsonwebtoken')
 
 const decodeJWT = (req, res, next) => {
-  // If jwt-bearer exists then decode it and put on req body
+  // If jwt-bearer exists then decode it and put on req
   const auth = req.get('Authorization') || null
-  let token = ''
+  let token = null
 
   if (auth && auth.split(' ')[0] === 'Bearer') {
     token = auth.split(' ')[1]
   }
 
-  if (token.length > 20) {
+  if (token && token.length > 20) {
     const decoded = jwt.verify(token, 'supersecret')
-    console.log(decoded)
-  } else {
-    token = null
+    token = decoded.apiKey
   }
 
   req.token = token
-  console.log('Inside')
-  console.log(auth, req.token)
-
   next()
 }
 
