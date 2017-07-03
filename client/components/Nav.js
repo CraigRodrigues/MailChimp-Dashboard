@@ -30,9 +30,12 @@ export default class Nav extends Component {
     })
   }
 
-  _onClose () {
+  _onClose (input) {
     this.setState({ active: false })
-    this.props.getNewData()
+
+    if (input === 'refresh') {
+      this.props.getNewData()
+    }
   }
 
   selectModal (modal) {

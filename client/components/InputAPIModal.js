@@ -39,7 +39,7 @@ export default class InputAPIModal extends Component {
         } else {
           // Restart the entire app with JWT being send and used as key
           this.setState({value: '', error: ''})
-          this.props.close()
+          this.props.close('refresh')
         }
       })
       .catch(error => {
