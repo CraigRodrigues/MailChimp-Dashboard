@@ -50,6 +50,11 @@ export default class App extends Component {
         locations: list.data[2].locations
       })
     })
+    .catch(err => {
+      console.log(err)
+      localStorage.clear()
+      this.getNewData()
+    })
   }
 
   componentWillUpdate (nextProps, nextState) {
