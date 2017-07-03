@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const signJWT = require('./jwtMiddleware')
 const Account = require('./routes/account')
 const Lists = require('./routes/lists')
 const Campaigns = require('./routes/campaigns')

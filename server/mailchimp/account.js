@@ -28,7 +28,8 @@ const validateKey = (key) => {
 
   return axios.get('/', { params: { fields: 'account_id' } })
     .then(response => {
-      return response.data
+      console.log('OKAY')
+      return Promise.resolve(response.data)
     })
     .catch(err => {
       console.log(err.message)
