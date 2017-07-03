@@ -21,6 +21,7 @@ export default class Nav extends Component {
 
     this._activate = this._activate.bind(this)
     this._onClose = this._onClose.bind(this)
+    this.resetLocalStorage = this.resetLocalStorage.bind(this)
   }
 
   _activate (event, option) {
@@ -46,6 +47,11 @@ export default class Nav extends Component {
     }
 
     return modals[modal]
+  }
+
+  resetLocalStorage () {
+    localStorage.clear()
+    this.props.getNewData()
   }
 
   render () {
@@ -91,7 +97,7 @@ export default class Nav extends Component {
               <Anchor onClick={(e) => this._activate(e, 'about')}>
                 About
               </Anchor>
-              <Anchor onClick={(e) => this._activate(e, 'comingSoon')}>
+              <Anchor onClick={this.resetLocalStorage}>
                 Reset
               </Anchor>
             </Menu>
