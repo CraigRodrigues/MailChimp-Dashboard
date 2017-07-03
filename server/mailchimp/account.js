@@ -3,6 +3,7 @@ const config = {
     fields: [
       'first_name',
       'last_name',
+      'account_name',
       'avatar_url',
       'total_subscribers',
       'account_industry',
@@ -28,12 +29,11 @@ const validateKey = (key) => {
 
   return axios.get('/', { params: { fields: 'account_id' } })
     .then(response => {
-      console.log('OKAY')
       return Promise.resolve(response.data)
     })
     .catch(err => {
       console.log(err.message)
-      return Promise.resolve('Invalid Key')
+      return Promise.reject(new Error('Invalid Key'))
     })
 }
 

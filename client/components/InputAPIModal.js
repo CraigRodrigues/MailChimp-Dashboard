@@ -32,12 +32,12 @@ export default class InputAPIModal extends Component {
 
     axios.post('/api/account', { apiKey: this.state.value })
       .then(response => {
-        localStorage.setItem('api_token', response.headers.token)
-
         if (response.data === 'Invalid Key') {
           this.setState({error: 'Invalid Key!'})
         } else {
           // Restart the entire app with JWT being send and used as key
+          // Only set local storage if key is valid
+          localStorage.setItem('api_token', response.headers.token)
           this.setState({value: '', error: ''})
           this.props.close('refresh')
         }

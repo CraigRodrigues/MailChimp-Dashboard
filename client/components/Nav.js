@@ -55,7 +55,7 @@ export default class Nav extends Component {
   }
 
   render () {
-    let { first_name, last_name } = this.props.account
+    let { account_name } = this.props.account
 
     let activeLayer = null
 
@@ -88,7 +88,7 @@ export default class Nav extends Component {
             responsive={false}>
             <Menu responsive
               pad='small'
-              label={`${first_name} ${last_name}`}
+              label={account_name}
               icon={<DownIcon />}
               dropAlign={{'right': 'right'}}>
               <Anchor onClick={(e) => this._activate(e, 'inputAPI')}>

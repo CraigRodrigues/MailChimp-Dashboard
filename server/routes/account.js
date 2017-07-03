@@ -17,7 +17,7 @@ const validateKey = (req, res) => {
 
       res.send(data)
     })
-    .catch(error => res.send(error))
+    .catch(error => res.send(error.message))
 }
 
 module.exports = { getAccountData, validateKey }
