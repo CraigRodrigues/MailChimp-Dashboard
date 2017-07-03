@@ -1,0 +1,29 @@
+{
+  "name": "MailChimp-Dashboard",
+  "scripts": {
+  },
+  "env": {
+    "HOST": {
+      "required": true
+    },
+    "MAILCHIMP_API_KEY": {
+      "required": true
+    },
+    "MAILCHIMP_API_URL": {
+      "required": true
+    },
+    "NODE_ENV": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
