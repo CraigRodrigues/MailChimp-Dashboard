@@ -23,16 +23,26 @@ export default class ClientsDoughnutChart extends Component {
 
   render () {
     let { clients } = this.props
-    return (
-      <div>
-        <Doughnut data={this.parseData(clients)}
-          width={350}
-          height={500}
-          options={{
-            maintainAspectRatio: true,
-            responsive: true
-          }} />
-      </div>
-    )
+
+    if (clients.length > 0) {
+      return (
+        <div>
+          <Doughnut data={this.parseData(clients)}
+            width={350}
+            height={500}
+            options={{
+              maintainAspectRatio: true,
+              responsive: true
+            }} />
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <div>No Client Data Found!</div>
+          <div>🙁</div>
+        </div>
+      )
+    }
   }
 }
