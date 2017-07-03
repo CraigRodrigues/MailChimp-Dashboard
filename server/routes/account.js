@@ -14,11 +14,6 @@ const validateKey = (req, res) => {
       const token = signJWT(req.body.apiKey)
       res.header('token', token)
 
-      return data
-    })
-    .then(data => {
-      console.log(data, res.header()._headers)
-
       res.send(data)
     })
     .catch(error => res.send(error))

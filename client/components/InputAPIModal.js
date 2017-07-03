@@ -32,6 +32,8 @@ export default class InputAPIModal extends Component {
 
     axios.post('/api/account', { apiKey: this.state.value })
       .then(response => {
+        localStorage.setItem('api_token', response.headers.token)
+
         if (response.data === 'Invalid Key') {
           this.setState({error: 'Invalid Key!'})
         } else {
