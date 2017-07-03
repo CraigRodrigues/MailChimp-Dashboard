@@ -1,5 +1,3 @@
-const axios = require('../wrapper')()
-
 const config = {
   params: {
     count: 50,
@@ -7,7 +5,9 @@ const config = {
   }
 }
 
-const campaignReports = () => {
+const campaignReports = (key) => {
+  let axios = require('../wrapper')(key)
+
   return axios.get('/campaigns', config)
     .then(response => response.data)
     .catch(err => console.log(err))
