@@ -6,10 +6,10 @@ module.exports = (key) => {
     key = process.env.MAILCHIMP_API_KEY
   }
 
-  const url = `https://${key.slice(-3)}.api.mailchimp.com/3.0`
+  let dc = key.split('-')[1]
 
   return axios.create({
-    baseURL: url,
+    baseURL: `https://${dc}.api.mailchimp.com/3.0`,
     auth: {
       username: 'mailkimp',
       password: key
