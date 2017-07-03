@@ -4,7 +4,7 @@
 
 - A dashboard visualizing all of my personal Mailchimp account and list data for my business GG Button.
 
-- TODO: Enter your own API key to see your data!
+- Enter your own API key to see your data!
 
 - Using Mailchimp v3 API, React, Node, Express, Grommet. TDD via Jest and Supertest.
 
