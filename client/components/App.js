@@ -49,14 +49,10 @@ export default class App extends Component {
         listStats: list.data[0].stats,
         locations: list.data[2].locations
       })
-
-      console.log(this.state)
     })
   }
 
   componentWillUpdate (nextProps, nextState) {
-    console.log('App updating', nextState.fetching)
-
     if (nextState.fetching) {
       getAllData().then(response => {
         let [account, list, campaign] = response

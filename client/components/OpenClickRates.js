@@ -10,8 +10,6 @@ import Label from 'grommet/components/Label'
 import Meter from 'grommet/components/Meter'
 
 export default ({myStats, industryRate}) => {
-  console.log(myStats)
-  console.log(industryRate)
   const myOpenRate = myStats ? convertToPercentage(myStats.open_rate) : 0
   const myClickRate = myStats ? convertToPercentage(myStats.click_rate) : 0
   const industryOpenRate = industryRate ? convertToPercentage(industryRate.open_rate) : 0
