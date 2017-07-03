@@ -70,7 +70,7 @@ export default class InputAPIModal extends Component {
             {' '}here.
           </a>
         </Paragraph>
-        <Form onSubmit={(e) => e.preventDefault() }>
+        <Form onSubmit={(e) => e.preventDefault()}>
           <FormField error={this.state.error}>
             <TextInput id='item1'
               name='api-key'
