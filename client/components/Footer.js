@@ -11,10 +11,10 @@ export default () => (
     direction='column'
     flex>
     <a href='https://blog.mailchimp.com/how-tough-conversations-fuel-mailchimps-community-involvement/'>
-      <Image size='thumb' src='/assets/mothership.png' fit='contain' />
+      <Image size='thumb' src='/assets/mothership.png' />
     </a>
     <a href='http://www.mailchimp.com'>
-      <Image size='small' src='/assets/mc_script_black.png' fit='contain' />
+      <Image size='small' src='/assets/mc_script_black.png' />
     </a>
     <Box direction='row'
       align='center'
