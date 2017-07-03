@@ -4,13 +4,9 @@ const list = 'b8e2c4cce3'
 // Takes fields as first arg, and optional params as extra
 // setConfig(fields, [params])
 const setConfig = (fields, ...params) => {
-  let config = {
-    params: {}
+  return {
+    params: { fields }
   }
-
-  config.params.fields = fields
-
-  return config
 }
 
 const listStats = (key) => {
