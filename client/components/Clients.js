@@ -18,7 +18,7 @@ export default ({clients}) => (
       <Heading align='center' tag='h2'>
         <PersonalComputerIcon />
         {' '}
-        Clients
+        Email Clients
       </Heading>
       <ClientsDoughnutChart clients={clients} />
     </Box>
