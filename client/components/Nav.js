@@ -92,7 +92,7 @@ export default class Nav extends Component {
               icon={<DownIcon />}
               dropAlign={{'right': 'right'}}>
               <Anchor onClick={(e) => this._activate(e, 'inputAPI')}>
-                Enter API Key
+                {localStorage.api_token ? 'API Key Loaded' : 'Enter API Key'}
               </Anchor>
               <Anchor onClick={(e) => this._activate(e, 'about')}>
                 About
