@@ -34,38 +34,47 @@ export default class LocationsBarChart extends Component {
   }
 
   render () {
-    return (
-      <Chart full>
-        <Axis count={4}
-          labels={[
-            {'index': 1, 'label': '15'},
-            {'index': 2, 'label': '25'},
-            {'index': 3, 'label': '35'}
-          ]}
-          vertical />
-        <Chart vertical>
-          <MarkerLabel count={10}
-            index={this.state.activeIndex}
-            label={<Value size='small' value={this.state.activeLabel} />} />
-          <Base height='medium'
-            width='large' />
-          <Layers>
-            <Grid rows={4} columns={4} />
-            <Bar values={this.numbers}
-              colorIndex='brand'
-              max={30}
-              points={false}
-              activeIndex={this.state.activeIndex} />
-            <Marker colorIndex='brand'
-              count={10}
-              vertical
-              index={this.state.activeIndex} />
-            <HotSpots count={10}
-              activeIndex={this.state.activeIndex}
-              onActive={(index) => this.handleActive(index)} />
-          </Layers>
+    if (this.props.countries.length > 0) {
+      return (
+        <Chart full>
+          <Axis count={4}
+            labels={[
+              {'index': 1, 'label': '15'},
+              {'index': 2, 'label': '25'},
+              {'index': 3, 'label': '35'}
+            ]}
+            vertical />
+          <Chart vertical>
+            <MarkerLabel count={10}
+              index={this.state.activeIndex}
+              label={<Value size='small' value={this.state.activeLabel} />} />
+            <Base height='medium'
+              width='large' />
+            <Layers>
+              <Grid rows={4} columns={4} />
+              <Bar values={this.numbers}
+                colorIndex='brand'
+                max={30}
+                points={false}
+                activeIndex={this.state.activeIndex} />
+              <Marker colorIndex='brand'
+                count={10}
+                vertical
+                index={this.state.activeIndex} />
+              <HotSpots count={10}
+                activeIndex={this.state.activeIndex}
+                onActive={(index) => this.handleActive(index)} />
+            </Layers>
+          </Chart>
         </Chart>
-      </Chart>
-    )
+      )
+    } else {
+      return (
+        <div>
+          <div>NO LOCATIONS FOUND</div>
+          <div>🙁</div>
+        </div>
+      )
+    }
   }
 }

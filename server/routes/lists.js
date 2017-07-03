@@ -23,6 +23,7 @@ const getListData = (req, res) => {
     })
     .then((list) => {
       // Batch async promises
+      console.log(list)
       return Promise.all([Mailchimp.listStats(req.token, list), Mailchimp.clientData(req.token, list), Mailchimp.locationData(req.token, list)])
     })
     .then(results => {
