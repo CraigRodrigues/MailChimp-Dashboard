@@ -20,11 +20,11 @@ export default () => (
       About
     </Heading>
     <Paragraph margin='small'>
-      Hi, I'm <a href='http://www.craigrodrigues.com'>Craig Rodrigues</a> 👋. I'm a software engineer living in Atlanta, GA.
+      Hi, I'm <a href='http://www.craigrodrigues.com'>Craig Rodrigues</a> 👋. I'm a software engineer living in Atlanta.
       I wanted to use the <a href='http://developer.mailchimp.com/'>MailChimp API V3</a> to make a visualization dashboard for my business <a href='www.ggbutton.com'>GG Button!</a>
     </Paragraph>
     <Paragraph margin='small'>
-      By default the data shown is just mine (from GG Button). However, you can load your own data by inputting your API and datacenter. To unload your data, just select that option from the menu.
+      By default the data shown is just mine (from GG Button). However, you can load your own data by inputting your API key from the menu. To reset everything just select that option at the bottom of the menu.
     </Paragraph>
     <Paragraph margin='small'>
       This was created using: React, Node, Express, ChartJS, Grommet and, of course, MailChimp's baller API! 🤘
