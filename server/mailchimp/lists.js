@@ -1,4 +1,4 @@
-const list = 'b8e2c4cce3'
+const myList = 'b8e2c4cce3'
 
 // Returns config object with the correct fields needed
 // Takes fields as first arg, and optional params as extra
@@ -9,7 +9,15 @@ const setConfig = (fields, ...params) => {
   }
 }
 
-const listStats = (key) => {
+const getList = (key) => {
+  let axios = require('../wrapper')(key)
+
+  return axios.get('/lists')
+    .then(response => response.data)
+    .catch(err => console.log(err))
+}
+
+const listStats = (key, list = myList) => {
   let axios = require('../wrapper')(key)
 
   return axios.get(`/lists/${list}`, setConfig('stats'))
@@ -17,7 +25,7 @@ const listStats = (key) => {
     .catch(err => console.log(err))
 }
 
-const clientData = (key) => {
+const clientData = (key, list = myList) => {
   let axios = require('../wrapper')(key)
 
   return axios.get(`/lists/${list}/clients`, setConfig('clients'))
@@ -25,7 +33,7 @@ const clientData = (key) => {
     .catch(err => console.log(err))
 }
 
-const locationData = (key) => {
+const locationData = (key, list = myList) => {
   let axios = require('../wrapper')(key)
 
   return axios.get(`/lists/${list}/locations`, setConfig('locations'))
@@ -37,4 +45,4 @@ const subscribe = () => {
   // TODO
 }
 
-module.exports = { listStats, clientData, locationData, subscribe }
+module.exports = { getList, listStats, clientData, locationData, subscribe }
