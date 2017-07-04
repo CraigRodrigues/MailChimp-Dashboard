@@ -10,7 +10,7 @@ const decodeJWT = (req, res, next) => {
   }
 
   if (token && token.length > 20) {
-    const decoded = jwt.verify(token, 'supersecret')
+    const decoded = jwt.verify(token, process.env.JWT_SECRET)
     token = decoded.apiKey
   }
 
@@ -19,7 +19,7 @@ const decodeJWT = (req, res, next) => {
 }
 
 const signJWT = (key) => {
-  return jwt.sign({ apiKey: key }, 'supersecret')
+  return jwt.sign({ apiKey: key }, process.env.JWT_SECRET)
 }
 
 module.exports = { decodeJWT, signJWT }
