@@ -37,7 +37,7 @@ export default class App extends Component {
     this.getNewData = this.getNewData.bind(this)
   }
 
-  componentWillMount () {
+  componentDidMount () {
     // Grab info from API
     getAllData().then(response => {
       let [account, list, campaign] = response
